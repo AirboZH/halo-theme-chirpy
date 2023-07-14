@@ -7,7 +7,7 @@
 
   [**Live Demo 演示 →**][demo]
   
-  [picture]
+  ![Demo Pic](https://cdn.airbozh.cn/blog/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230715011526.jpg)
 
 </div>
 
