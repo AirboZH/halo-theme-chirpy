@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+  <!-- The Side Bar -->
+
+  <div
+    th:fragment="sidebar()"
+    id="sidebar"
+    class="d-flex flex-column align-items-end"
+  >
+    <div class="profile-wrapper">
+      <!--    TODO avatar image & href-->
+      <a href="#" id="avatar" class="rounded-circle">
+        <img
+          src="https://chirpy-img.netlify.app/commons/avatar.jpg"
+          width="112"
+          height="112"
+          alt="avatar"
+          onerror="this.style.display='none'"
+        />
+      </a>
+
+      <div class="site-title">
+        <!--      TODO-->
+        <a href="#">Airbo's Blog</a>
+      </div>
+      <!--    TODO-->
+      <div class="site-subtitle fst-italic">A text-focused Halo theme</div>
+    </div>
+    <!-- .profile-wrapper -->
+
+    <ul class="nav flex-column flex-grow-1 w-100 ps-0">
+      <!-- home -->
+      <!--    TODO menu-->
+      <li class="nav-item active">
+        <a href="#" class="nav-link">
+          <i class="fa-fw fas fa-home"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <!-- the real tabs -->
+      <!--   TODO For-->
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-fw"></i>
+          <span>test</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-fw"></i>
+          <span>test</span>
+        </a>
+      </li>
+
+      <!-- .nav-item -->
+    </ul>
+    <!-- ul.nav.flex-column -->
+
+    <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+      <!--    {% unless site.theme_mode %}-->
+      <button class="mode-toggle btn" aria-label="Switch Mode">
+        <i class="fas fa-adjust"></i>
+      </button>
+
+      <!--    {% if site.data.contact.size > 0 %}-->
+      <span class="icon-border"></span>
+
+      <!--    TODO link -->
+      <!--    {% for entry in site.data.contact %}-->
+      <!--    {% case entry.type %}-->
+      <!--    {% when 'github', 'twitter' %}-->
+      <!--    {%- capture url -%}-->
+      <!--    https://{{ entry.type }}.com/{{ site[entry.type].username }}-->
+      <!--    {%- endcapture -%}-->
+      <!--    {% when 'email' %}-->
+      <!--    {% assign email = site.social.email | split: '@' %}-->
+      <!--    {%- capture url -%}-->
+      <!--    javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')-->
+      <!--    {%- endcapture -%}-->
+      <!--    {% when 'rss' %}-->
+      <!--    {% assign url = '/feed.xml' | relative_url %}-->
+      <!--    {% else %}-->
+      <!--    {% assign url = entry.url %}-->
+      <!--    {% endcase %}-->
+
+      <!--    {% if url %}-->
+      <!--    <a-->
+      <!--      href="{{ url }}"-->
+      <!--      aria-label="{{ entry.type }}"-->
+      <!--      {% assign link_types = '' %}-->
+
+      <!--      {% unless entry.noblank %}-->
+      <!--      target="_blank"-->
+      <!--      {% assign link_types = 'noopener noreferrer' %}-->
+      <!--      {% endunless %}-->
+
+      <!--      {% if entry.type == 'mastodon' %}-->
+      <!--    {% assign link_types = link_types | append: ' me' | strip %}-->
+      <!--    {% endif %}-->
+
+      <!--    {% unless link_types == empty %}-->
+      <!--    rel="{{ link_types }}"-->
+      <!--    {% endunless %}-->
+      <!--    >-->
+      <!--    <i class="{{ entry.icon }}"></i>-->
+      <!--    </a>-->
+      <!--    {% endif %}-->
+      <!--    {% endfor %}-->
+    </div>
+    <!-- .sidebar-bottom -->
+  </div>
+  <!-- #sidebar -->
+</html>

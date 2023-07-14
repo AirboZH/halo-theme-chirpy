@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  lang="en"
+  th:fragment="html (title,content)"
+>
+  <th:block th:replace="~{modules/head :: head(title)}" />
+
+  <body>
+    <th:block th:replace="~{modules/sidebar :: sidebar()}" />
+    <div id="main-wrapper" class="d-flex justify-content-center">
+      <div id="main" class="container px-xxl-5">
+        <th:block th:replace="~{modules/topbar :: topbar()}" />
+        <th:block th:replace="${content}" />
+      </div>
+    </div>
+
+    <th:block th:replace="~{modules/footer :: footer()}" />
+    <div id="mask"></div>
+
+    <button
+      id="back-to-top"
+      aria-label="back-to-top"
+      class="btn btn-lg btn-box-shadow"
+    >
+      <i class="fas fa-angle-up"></i>
+    </button>
+
+    <!--TODO pwa-->
+    <!--{% if site.pwa.enabled %}-->
+    <!--<div-->
+    <!--  id="notification"-->
+    <!--  class="toast"-->
+    <!--  role="alert"-->
+    <!--  aria-live="assertive"-->
+    <!--  aria-atomic="true"-->
+    <!--  data-bs-animation="true"-->
+    <!--  data-bs-autohide="false"-->
+    <!--&gt;-->
+    <!--  <div class="toast-header">-->
+    <!--    <button-->
+    <!--      type="button"-->
+    <!--      class="btn-close ms-auto"-->
+    <!--      data-bs-dismiss="toast"-->
+    <!--      aria-label="Close"-->
+    <!--    ></button>-->
+    <!--  </div>-->
+    <!--  <div class="toast-body text-center pt-0">-->
+    <!--    <p class="px-2 mb-3">{{ site.data.locales[lang].notification.update_found }}</p>-->
+    <!--    <button type="button" class="btn btn-primary" aria-label="Update">-->
+    <!--      {{ site.data.locales[lang].notification.update }}-->
+    <!--    </button>-->
+    <!--  </div>-->
+    <!--</div>-->
+    <!--{% endif %}-->
+    <!--TODO include js-selector.html-->
+
+    <!--TODO include mermaid.html-->
+    <!--TODO include search-loader.html-->
+  </body>
+</html>

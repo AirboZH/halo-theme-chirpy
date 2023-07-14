@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+  <!--TODO {% if update_list.size > 0 %}-->
+  <div th:fragment="updateList()" id="access-lastmod" class="post">
+    <div class="panel-heading">Recently Updated</div>
+    <ul
+      th:with="posts = ${postFinder.list(1,10)}"
+      class="post-content list-unstyled ps-0 pb-1 ms-1 mt-2"
+    >
+      <li th:each="post : ${posts.items}" class="text-truncate lh-lg">
+        <a th:href="@{${post.status.permalink}}">[[${post.spec.title}]]</a>
+      </li>
+    </ul>
+  </div>
+</html>

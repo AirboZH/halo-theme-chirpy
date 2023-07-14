@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+  <div
+    th:fragment="panel()"
+    id="panel-wrapper"
+    class="col-xl-3 ps-2 text-muted"
+  >
+    <div class="access">
+      <th:block th:replace="~{modules/widgets/update-list :: updateList()}" />
+      <th:block
+        th:replace="~{modules/widgets/trending-tags :: trendingTags()}"
+      />
+    </div>
+  </div>
+</html>
