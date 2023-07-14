@@ -27,8 +27,8 @@ Thanks to [Halo-Dev][halo-dev] for their exceptional work in creating [Halo][hal
 
 ## License
 
-*Chirpy Halo Theme* is published under [GPL v3or later][gpl] License.  
-Chirpy Halo主题在GPL v3或更高版本许可下发布。
+*Chirpy Halo Theme* is published under [MIT License][mit] .  
+Chirpy Halo主题在[MIT许可证][mit]下发布。
 
 *Chirpy Halo Theme* redistributes the following third-party software. We have decided to redistribute all these, instead of using them through a CDN, to allow *Chirpy Halo Theme* to work in cases where Internet connectivity is not available.  
 Chirpy Halo主题重新分发以下第三方软件。我们决定重新分发所有这些软件，而不是通过CDN使用它们，以便在没有网络连接的情况下使Chirpy Halo主题正常工作。
@@ -36,13 +36,27 @@ Chirpy Halo主题重新分发以下第三方软件。我们决定重新分发所
 - [Chirpy Jekyll Theme][origin-github]
 
   Copyright (c) 2019 Cotes Chung
-  [MIT License][mit]
+  [MIT License][jekyll-theme-chirpy-mit]
+
+- [Bootstrap][bootstrap]
+
+  Copyright (c) 2011-2023 The Bootstrap Authors
+  [MIT License][bootstrap-mit]
+
+- [Font Awesome Free][front-awesome]
+
+  Copyright 2023 Fonticons, Inc.
+  [MIT License][front-awesome-mit]
+
 
 [halo]: https://github.com/halo-dev/halo
 [halo-dev]: https://github.com/halo-dev
 [image]: https://www.clipartmax.com/middle/m2i8b1m2K9Z5m2K9_ant-clipart-childrens-ant-cute/
 [demo]: https://www.airbozh.cn
-[gpl]: https://github.com/AirboZH/halo-theme-chirpy/blob/master/LICENSE
+[mit]: https://github.com/AirboZH/halo-theme-chirpy/blob/master/LICENSE
 [origin-github]: https://github.com/cotes2020/jekyll-theme-chirpy
-[mit]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE
-
+[jekyll-theme-chirpy-mit]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE
+[bootstrap]: https://github.com/twbs/bootstrap
+[bootstrap-mit]: https://github.com/twbs/bootstrap/blob/main/LICENSE
+[front-awesome]: https://fontawesome.com
+[front-awesome-mit]: https://fontawesome.com/license/free
