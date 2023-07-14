@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+  <th:block th:fragment="page(content, layout)">
+    <!-- TODO <div class="row{% unless has_tail %} mb-5{% endunless %}">-->
+    <div class="row mb-5">
+      <div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pe-xl-4">
+        <div class="post px-md-2">
+          <h1 th:if="not ${layout} eq 'index'" class="dynamic-title">
+            [[${layout}]]
+          </h1>
+          <div class="post-content">
+            <th:block th:replace="${content}" />
+          </div>
+        </div>
+      </div>
+
+      <th:block th:replace="~{modules/panel :: panel()}" />
+    </div>
+  </th:block>
+</html>

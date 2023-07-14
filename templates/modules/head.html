@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+  <head th:fragment="head(title)">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#f7f7f7"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#1b1b1e"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+    />
+
+    <title th:text="${title}"></title>
+
+    <!--  {% if site.resources.ignore_env != jekyll.environment and site.resources.self_hosted %}-->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+    />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" th:href="@{/assets/lib/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/assets/index.css}" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+    />
+
+    <!--  {% if site.toc and page.toc %}-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tocbot@4.21.0/dist/tocbot.min.css"
+    />
+
+    <!--  {% if page.layout == 'page' or page.layout == 'post' %}-->
+    <!-- Manific Popup -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"
+    />
+
+    <!-- JavaScript -->
+    <th:block th:replace="~{modules/mode-toggle :: mode_toggle()}"></th:block>
+  </head>
+</html>
