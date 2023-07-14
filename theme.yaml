@@ -1,0 +1,17 @@
+apiVersion: theme.halo.run/v1alpha1
+kind: Theme
+metadata:
+  name: halo-theme-chirpy
+spec:
+  displayName: Chirpy
+  author:
+    name: AirboZH
+    website: https://airbozh.cn
+  description: A minimal, responsive and feature-rich Halo theme for technical writing.
+  logo: https://chirpy-img.netlify.app/commons/avatar.jpg
+  website: https://github.com/AirboZH/halo-theme-chirpy
+  repo: https://github.com/AirboZH/halo-theme-chirpy.git
+  settingName: "halo-theme-chirpy-setting"
+  configMapName: "halo-theme-chirpy-configMap"
+  version: 1.0.0
+  require: 2.0.0
