@@ -1,11 +1,3 @@
----
-layout: compress
-permalink: '/sw.js'
-# PWA service worker
----
-
-self.importScripts('{{ "/assets/js/data/swcache.js" | relative_url }}');
-
 const cacheName = 'chirpy-{{ "now" | date: "%Y%m%d.%H%M%S" }}';
 
 function verifyDomain(url) {
