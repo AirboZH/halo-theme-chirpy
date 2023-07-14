@@ -1,8 +1,3 @@
----
-layout: compress
-permalink: '/app.js'
----
-
 const $notification = $('#notification');
 const $btnRefresh = $('#notification .toast-body>button');
 

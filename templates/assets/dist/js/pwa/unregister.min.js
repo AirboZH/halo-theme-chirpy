@@ -1,0 +1,1 @@
+"serviceWorker"in navigator&&navigator.serviceWorker.getRegistrations().then(e=>{for(let r of e)r.unregister()});
