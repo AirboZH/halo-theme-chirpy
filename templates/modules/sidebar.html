@@ -8,49 +8,37 @@
     class="d-flex flex-column align-items-end"
   >
     <div class="profile-wrapper">
-      <!--    TODO avatar image & href-->
-      <a href="#" id="avatar" class="rounded-circle">
+      <a class="rounded-circle" href="/" id="avatar">
         <img
           src="https://chirpy-img.netlify.app/commons/avatar.jpg"
+          th:src="${site.logo}"
           width="112"
           height="112"
           alt="avatar"
-          onerror="this.style.display='none'"
         />
       </a>
 
       <div class="site-title">
-        <!--TODO-->
-        <a href="#">Airbo's Blog</a>
+        <a href="/">[[${site.title}]]</a>
       </div>
-      <!--TODO-->
-      <div class="site-subtitle fst-italic">A text-focused Halo theme</div>
+      <div class="site-subtitle fst-italic">
+        [[${#strings.isEmpty(site.subtitle)} ? 'A text-focused Halo theme' : ${site.subtitle}]]
+      </div>
     </div>
     <!-- .profile-wrapper -->
 
-    <ul class="nav flex-column flex-grow-1 w-100 ps-0">
-      <!-- home -->
-      <!--    TODO menu-->
-      <li class="nav-item active">
-        <a href="#" class="nav-link">
-          <i class="fa-fw fas fa-home"></i>
-          <span>Home</span>
-        </a>
-      </li>
-      <!-- the real tabs -->
+    <ul class="nav flex-column flex-grow-1 w-100 ps-0" th:with="menuItems = ${menuFinder.getPrimary().menuItems}">
       <!--   TODO For-->
-      <li class="nav-item">
-        <a href="#" class="nav-link">
-          <i class="fa-fw"></i>
-          <span>test</span>
+      <li class="nav-item" th:each="menuItem : ${menuItems}">
+        <a class="nav-link" th:href="@{${menuItem.status.href}}"
+           th:target="${menuItem.spec.target?.value}"
+           th:with="icon = ${#annotations.get(menuItem, 'icon')}">
+          <i class="fa-fw fas fa-bars-staggered" th:if="${#strings.isEmpty(icon)}"></i>
+          <i th:class="${'fa-fw ' + icon}" th:if="${not #strings.isEmpty(icon)}"></i>
+          <span>[[${menuItem.status.displayName}]]</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">
-          <i class="fa-fw"></i>
-          <span>test</span>
-        </a>
-      </li>
+
 
       <!-- .nav-item -->
     </ul>
