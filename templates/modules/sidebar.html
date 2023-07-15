@@ -22,23 +22,35 @@
         <a href="/">[[${site.title}]]</a>
       </div>
       <div class="site-subtitle fst-italic">
-        [[${#strings.isEmpty(site.subtitle)} ? 'A text-focused Halo theme' : ${site.subtitle}]]
+        [[${#strings.isEmpty(site.subtitle)} ? 'A text-focused Halo theme' :
+        ${site.subtitle}]]
       </div>
     </div>
     <!-- .profile-wrapper -->
 
-    <ul class="nav flex-column flex-grow-1 w-100 ps-0" th:with="menuItems = ${menuFinder.getPrimary().menuItems}">
+    <ul
+      class="nav flex-column flex-grow-1 w-100 ps-0"
+      th:with="menuItems = ${menuFinder.getPrimary().menuItems}"
+    >
       <!--   TODO For-->
       <li class="nav-item" th:each="menuItem : ${menuItems}">
-        <a class="nav-link" th:href="@{${menuItem.status.href}}"
-           th:target="${menuItem.spec.target?.value}"
-           th:with="icon = ${#annotations.get(menuItem, 'icon')}">
-          <i class="fa-fw fas fa-bars-staggered" th:if="${#strings.isEmpty(icon)}"></i>
-          <i th:class="${'fa-fw ' + icon}" th:if="${not #strings.isEmpty(icon)}"></i>
+        <a
+          class="nav-link"
+          th:href="@{${menuItem.status.href}}"
+          th:target="${menuItem.spec.target?.value}"
+          th:with="icon = ${#annotations.get(menuItem, 'icon')}"
+        >
+          <i
+            class="fa-fw fas fa-bars-staggered"
+            th:if="${#strings.isEmpty(icon)}"
+          ></i>
+          <i
+            th:class="${'fa-fw ' + icon}"
+            th:if="${not #strings.isEmpty(icon)}"
+          ></i>
           <span>[[${menuItem.status.displayName}]]</span>
         </a>
       </li>
-
 
       <!-- .nav-item -->
     </ul>
