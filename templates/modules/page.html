@@ -5,12 +5,14 @@
     <div class="row mb-5">
       <div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pe-xl-4">
         <div class="post px-md-2">
-          <h1 th:if="not ${layout} eq 'index'" class="dynamic-title">
-            [[${layout}]]
-          </h1>
-          <div class="post-content">
-            <th:block th:replace="${content}" />
-          </div>
+          <th:block th:if="not ${layout} eq 'index'">
+            <h1 class="dynamic-title">[[${layout}]]</h1>
+            <div class="post-content">
+              <th:block th:replace="${content}"/>
+            </div>
+          </th:block>
+
+          <th:block th:if="${layout} eq 'index'" th:replace="${content}"/>
         </div>
       </div>
 
