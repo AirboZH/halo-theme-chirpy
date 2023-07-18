@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html
+  th:replace="~{modules/layout :: html (title = ${site.title},
+  content = ~{modules/page :: page(~{::content}, 'index')})}"
+  xmlns:th="https://www.thymeleaf.org"
+></html>
