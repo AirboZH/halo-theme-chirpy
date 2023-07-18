@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html
+  th:replace="~{modules/layout :: html (title = ${site.title},
+  content = ~{modules/page :: page(~{::content}, '分类')})}"
+  xmlns:th="https://www.thymeleaf.org"
+>
+<th:block th:each="category,index : ${categories}" th:fragment="content">
+  <div class="card categories">
+    <!-- top-category -->
+    <div
+      class="card-header d-flex justify-content-between hide-border-bottom"
+      th:id="'h_' + ${index.count}"
+    >
+      <!-- not have subcategory -->
+      <th:block th:if="${#lists.isEmpty(category.children)}">
+          <span class="ms-2">
+            <i class="far fa-folder fa-fw"></i>
+            <a class="mx-2" th:href="${category.status.permalink}"
+            >[[${category.spec.displayName}]]</a
+            >
+            <!-- content count -->
+            <span class="text-muted small font-weight-light">
+              [[${category.status.visiblePostCount} + ' 篇文章']]
+            </span>
+          </span>
+        <!-- arrow -->
+        <span
+          class="category-trigger hide-border-bottom disabled"
+          data-bs-toggle="collapse"
+          th:if="${#lists.isEmpty(category.children)}"
+        >
+            <i class="fas fa-fw fa-angle-right"></i>
+          </span>
+      </th:block>
+      <!-- have subcategory -->
+      <th:block th:if="${!#lists.isEmpty(category.children)}">
+          <span class="ms-2">
+            <i class="far fa-folder-open fa-fw"></i>
+            <a class="mx-2" th:href="${category.status.permalink}"
+            >[[${category.spec.displayName}]]</a
+            >
+            <!-- content count -->
+            <span class="text-muted small font-weight-light">
+              [[${#lists.size(category.children)} + '个分类 ' +
+              ${category.status.visiblePostCount} + ' 篇文章']]
+            </span>
+          </span>
+        <!-- arrow -->
+        <a
+          aria-expanded="true"
+          class="category-trigger hide-border-bottom"
+          data-bs-toggle="collapse"
+          th:aria-label="'h_' + ${index.count} + '-trigger'"
+          th:href="'#l_' + ${index.count}"
+        >
+          <i class="fas fa-fw fa-angle-down"></i>
+        </a>
+      </th:block>
+    </div>
+
+    <!-- Sub-categories -->
+    <div
+      aria-expanded="true"
+      class="collapse show"
+      th:id="'#l_' + ${index.count}"
+      th:if="${!#lists.isEmpty(category.children)}"
+    >
+      <ul
+        class="list-group"
+        th:each="subcategory,index : ${category.children}"
+      >
+        <li class="list-group-item">
+          <i class="far fa-folder fa-fw"></i>
+
+          <a class="mx-2" th:href="${subcategory.status.permalink}"
+          >[[${subcategory.spec.displayName}]]</a
+          >
+
+          <span class="text-muted small font-weight-light">
+              [[${subcategory.status.visiblePostCount} + ' 篇文章']]
+            </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- .card -->
+</th:block>
+</html>
