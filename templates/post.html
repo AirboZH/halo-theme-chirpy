@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
   th:replace="~{modules/layout :: html (title =${post.spec.title} +' - '+ ${site.title},
-  content = ~{modules/page :: page(~{::content}, ${post.spec.title})})}"
+  content = ~{modules/page :: page(~{::content}, 'post')})}"
   xmlns:th="https://www.thymeleaf.org"
 >
 <th:block th:fragment="content">
