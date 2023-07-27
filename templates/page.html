@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html
+  th:replace="~{modules/layout :: html (title =${post.spec.title} +' - '+ ${site.title},
+  content = ~{modules/page :: page(~{::content}, 'index')})}"
+  xmlns:th="https://www.thymeleaf.org"
+>
+<th:block th:fragment="content">
+  <h1 data-toc-skip>[[${singlePage.spec.title}]]</h1>
+  <div class="post-content">
+    <th:block th:utext="${singlePage.content.content}" />
+  </div>
+</th:block>
+</html>
