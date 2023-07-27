@@ -8,7 +8,7 @@
           <th:block th:if="${layout} ne 'index' and ${layout} ne 'post'">
             <h1 class="dynamic-title">[[${layout}]]</h1>
             <div class="post-content">
-              <th:block th:replace="${content}"/>
+              <th:block th:replace="${content}" />
             </div>
           </th:block>
 
