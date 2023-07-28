@@ -63,5 +63,9 @@
         </div>
       </a>
     </div>
+    <th:block
+      th:if="${posts.totalPages > 1}"
+      th:replace="~{modules/widgets/post-paginator :: paginator('',${posts})}"
+    />
   </th:block>
 </html>

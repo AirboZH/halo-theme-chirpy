@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html th:fragment="paginator(path,posts)" xmlns:th="https://www.thymeleaf.org">
+<!-- The paginator for post list on HomgPage. -->
+<ul class="pagination align-items-center mt-4 mb-1 ps-lg-2">
+  <!-- left arrow -->
+  <li th:class="page-item + ${posts.hasPrevious ? '' : ' disabled' }">
+    <a
+      aria-label="previous-page"
+      class="page-link btn-box-shadow"
+      th:href="${posts.prevUrl != null ? posts.prevUrl : '#' }"
+    >
+      <i class="fas fa-angle-left"></i>
+    </a>
+  </li>
+
+  <!-- page numbers -->
+  <th:block th:if="${posts.page > 3}">
+    <li th:class="page-item + ${posts.page == index ? '': ' active'}">
+      <a class="page-link btn-box-shadow" th:href="${path+'/page/1'}">1</a>
+    </li>
+    <li class="page-item disabled">
+        <span class="page-link btn-box-shadow" th:if="${posts.page != 4}"
+        >…</span
+        >
+    </li>
+  </th:block>
+
+  <th:block th:each="index:${#numbers.sequence(posts.page-2,posts.page+2)}">
+    <li
+      th:class="page-item + ${posts.page == index ? '': ' active'}"
+      th:if="${index > 0 && index <= posts.totalPages}"
+    >
+      <a class="page-link btn-box-shadow" th:href="${path+'/page/'+index}"
+      >[[${index}]]</a
+      >
+    </li>
+  </th:block>
+
+  <th:block th:if="${posts.totalPages - posts.page > 2}">
+    <li class="page-item disabled">
+        <span
+          class="page-link btn-box-shadow"
+          th:if="${posts.totalPages - posts.page != 3}"
+        >…</span
+        >
+    </li>
+    <li th:class="page-item + ${posts.page == index ? '': ' active'}">
+      <a
+        class="page-link btn-box-shadow"
+        th:href="${path+'/page/'+posts.totalPages}"
+      >[[${posts.totalPages}]]</a
+      >
+    </li>
+  </th:block>
+
+  <!-- right arrow -->
+  <li th:class="page-item + ${posts.hasNext ? '' : ' disabled' }">
+    <a
+      aria-label="next-page"
+      class="page-link btn-box-shadow"
+      th:href="${posts.hasNext ? posts.nextUrl : '#' }"
+    >
+      <i class="fas fa-angle-right"></i>
+    </a>
+  </li>
+</ul>
+<!--.pagination-->
+</html>
