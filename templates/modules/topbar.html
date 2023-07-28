@@ -1,51 +1,68 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
   <!-- The Top Bar -->
-  <div th:fragment="topbar()" id="topbar-wrapper">
+  <div id="topbar-wrapper" th:fragment="topbar(layout)">
     <div
       id="topbar"
       class="container d-flex align-items-center justify-content-between h-100"
     >
-      <span id="breadcrumb">
-        <span>Home</span>
-        <!--      {% assign paths = page.url | split: '/' %}-->
-
-        <!--      {% if paths.size == 0 or page.layout == 'home' %}-->
-        <!--      &lt;!&ndash; index page &ndash;&gt;-->
-        <!--        <span>{{ site.data.locales[include.lang].tabs.home | capitalize }}</span>-->
-
-        <!--      {% else %}-->
-        <!--        {% for item in paths %}-->
-        <!--          {% if forloop.first %}-->
-        <!--            <span>-->
-        <!--              <a href="{{ '/' | relative_url }}">-->
-        <!--                {{ site.data.locales[include.lang].tabs.home | capitalize }}-->
-        <!--              </a>-->
-        <!--            </span>-->
-
-        <!--          {% elsif forloop.last %}-->
-        <!--            {% if page.collection == 'tabs' %}-->
-        <!--              <span>{{ site.data.locales[include.lang].tabs[item] | default: page.title }}</span>-->
-        <!--            {% else %}-->
-        <!--              <span>{{ page.title }}</span>-->
-        <!--            {% endif %}-->
-
-        <!--          {% elsif page.layout == 'category' or page.layout == 'tag' %}-->
-        <!--            <span>-->
-        <!--              <a href="{{ item | relative_url }}">-->
-        <!--                {{ site.data.locales[include.lang].tabs[item] | default: page.title }}-->
-        <!--              </a>-->
-        <!--            </span>-->
-        <!--          {% endif %}-->
-        <!--        {% endfor %}-->
-        <!--      {% endif %}-->
+      <span id="breadcrumb" th:switch="${layout}">
+        <th:block th:case="'archives'">
+           <span>
+            <a href="/">首页</a>
+          </span>
+          <span>归档</span>
+        </th:block>
+        <th:block th:case="'categories'">
+          <span>
+            <a href="/">首页</a>
+          </span>
+          <span>分类</span>
+        </th:block>
+        <th:block th:case="category">
+          <span>
+            <a href="/">首页</a>
+          </span>
+          <span>
+            <a href="/categories">分类</a>
+          </span>
+          <span>分类</span>
+        </th:block>
+        <th:block th:case="index">
+          <span>首页</span>
+        </th:block>
+        <th:block th:case="page">
+          <span>
+            <a href="/">首页</a>
+          </span>
+          <span>页面</span>
+        </th:block>
+        <th:block th:case="post">
+          <span>
+            <a href="/">首页</a>
+          </span>
+          <span>文章</span>
+        </th:block>
+        <th:block th:case="tag">
+          <span>
+            <a href="/">首页</a>
+          </span>
+          <span>
+            <a href="/tags">标签</a>
+          </span>
+          <span>标签</span>
+        </th:block>
+        <th:block th:case="tags">
+          <span>
+            <a href="/">首页</a>
+          </span>
+          <span>标签</span>
+        </th:block>
       </span>
-      <!-- endof #breadcrumb -->
 
+      <!--      display none-->
       <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
-
       <div id="topbar-title">
-        TEST
         <!--      {% if page.layout == 'home' %}-->
         <!--      {{- site.data.locales[include.lang].title | default: site.title -}}-->
         <!--      {% elsif page.collection == 'tabs' or page.layout == 'page' %}-->
@@ -55,6 +72,7 @@
         <!--      {{- site.data.locales[include.lang].layout[page.layout] | default: page.layout | capitalize -}}-->
         <!--      {% endif %}-->
       </div>
+      <!--     .display none-->
 
       <i id="search-trigger" class="fas fa-search fa-fw"></i>
       <span id="search-wrapper" class="align-items-center">
@@ -67,7 +85,6 @@
           autocomplete="off"
           placeholder="input"
         />
-        <!--        placeholder="{{ site.data.locales[include.lang].search.hint | capitalize }}..."-->
       </span>
       <span id="search-cancel">取消</span>
     </div>
