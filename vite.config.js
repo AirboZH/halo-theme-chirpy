@@ -1,9 +1,14 @@
-import {defineConfig} from "vite";
-import {globSync} from "glob";
+import { defineConfig } from "vite";
+import { globSync } from "glob";
 import path from "path";
-import {fileURLToPath} from "url";
+import { fileURLToPath } from "url";
 
 const ASSETS_BASE = `/assets/dist/`;
+
+//获取package版本
+const pkg = require("./package.json");
+const version = pkg.version || "0.0.0";
+
 export default defineConfig({
   build: {
     outDir: "templates" + ASSETS_BASE,
@@ -16,12 +21,12 @@ export default defineConfig({
       ),
       output: {
         format: "es",
-        entryFileNames: "[name].min.js",
+        entryFileNames: `[name]-v${version}.min.js`,
         assetFileNames: (assetInfo) => {
           if (assetInfo.name && assetInfo.name.endsWith(".css")) {
-            return "css/[name].min.[ext]";
+            return `css/[name]-v${version}.min.[ext]`;
           }
-          return "[name].min.[ext]";
+          return `[name]-v${version}.min.[ext]`;
         },
       },
     },
