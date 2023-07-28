@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html
-  th:replace="~{modules/layout :: html (title = ${site.title},
+  th:replace="~{modules/layout :: html (title = '分类：'+ ${category.spec.displayName} +' - ' + ${site.title},
   content = ~{modules/page :: page(~{::content}, 'category')})}"
   xmlns:th="https://www.thymeleaf.org"
 >
