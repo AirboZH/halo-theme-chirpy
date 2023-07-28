@@ -75,16 +75,22 @@
       <!--     .display none-->
 
       <i id="search-trigger" class="fas fa-search fa-fw"></i>
-      <span id="search-wrapper" class="align-items-center">
+      <span
+        class="align-items-center"
+        id="search-wrapper"
+        th:if="${pluginFinder.available('PluginSearchWidget')}"
+      >
         <i class="fas fa-search fa-fw"></i>
-        <input
-          class="form-control"
-          id="search-input"
-          type="search"
-          aria-label="search"
-          autocomplete="off"
-          placeholder="input"
-        />
+        <a href="javascript:SearchWidget.open()" title="搜索">
+                    <input
+                      aria-label="search"
+                      autocomplete="off"
+                      class="form-control"
+                      id="search-input"
+                      placeholder="搜索"
+                      type="search"
+                    />
+        </a>
       </span>
       <span id="search-cancel">取消</span>
     </div>
