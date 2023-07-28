@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
-  th:replace="~{modules/layout :: html (title = ${site.title},
-  content = ~{modules/page :: page(~{::content}, '分类')})}"
+  th:replace="~{modules/layout :: html (title = '分类 - ' + ${site.title},
+  content = ~{modules/page :: page(~{::content}, 'categories')})}"
   xmlns:th="https://www.thymeleaf.org"
 >
 <th:block th:each="category,index : ${categories}" th:fragment="content">

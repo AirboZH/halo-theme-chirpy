@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html
-  th:replace="~{modules/layout :: html (title = ${site.title},
+  th:replace="~{modules/layout :: html (title = '标签 - ' + ${site.title},
   content = ~{modules/page :: page(~{::content}, 'tags')})}"
   xmlns:th="https://www.thymeleaf.org"
 >
