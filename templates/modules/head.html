@@ -32,7 +32,10 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" th:href="@{/assets/lib/bootstrap.min.css}" />
-    <link rel="stylesheet" th:href="@{/assets/dist/css/style.min.css}" />
+    <link
+      rel="stylesheet"
+      th:href="@{'/assets/dist/css/style-v'+${theme.spec.version}+'.min.css'}"
+    />
 
     <!-- Font Awesome -->
     <link
@@ -57,7 +60,10 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script th:src="@{/assets/dist/js/index.min.js}" type="module"></script>
+    <script
+      th:src="@{'/assets/dist/js/index-v'+${theme.spec.version}+'.min.js'}"
+      type="module"
+    ></script>
 
     <th:block th:replace="~{modules/mode-toggle :: mode_toggle()}"></th:block>
   </head>

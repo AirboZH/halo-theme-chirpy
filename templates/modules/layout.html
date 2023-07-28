@@ -10,7 +10,6 @@
     <th:block th:replace="~{modules/sidebar :: sidebar()}" />
     <div id="main-wrapper" class="d-flex justify-content-center">
       <div id="main" class="container px-xxl-5">
-        <th:block th:replace="~{modules/topbar :: topbar()}" />
         <th:block th:replace="${content}" />
       </div>
     </div>

@@ -4,10 +4,30 @@ metadata:
   name: halo-theme-chirpy-setting
 spec:
   forms:
-    - group: styles
-      label: 样式
+    - group: sidebar
+      label: 侧栏
       formSchema:
-        - $formkit: color
-          name: background_color
-          label: 背景颜色
-          value: "#f2f2f2"
+        - $formkit: repeater
+          name: socials
+          label: 社交链接
+          value:
+            - icon: fab fa-github
+              url: https://github.com/airbozh
+            - icon: fab fa-twitter
+              url: https://twitter.com/
+            - icon: fas fa-envelope
+              url: mailto:i@airbozh.cn
+            - icon: fas fa-rss
+              url: /feed.xml
+          max: 5
+          children:
+            - $formkit: text
+              name: icon
+              label: 图标
+              value: ''
+              required: true
+            - $formkit: text
+              name: url
+              label: 链接
+              value: ''
+              required: true
