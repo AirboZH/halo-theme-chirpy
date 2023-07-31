@@ -1,6 +1,6 @@
 {
   "name": "halo-theme-chirpy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A minimal, responsive and feature-rich Halo theme for technical writing.",
   "scripts": {
     "build": "npm run sass && vite build",
