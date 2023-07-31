@@ -10,7 +10,7 @@
       <th:block th:each="tag : ${tags.items}">
         <a
           class="post-tag btn btn-outline-primary"
-          th:href="@{'/tag/'+${tag.spec.slug}}"
+          th:href="@{'/tags/'+${tag.spec.slug}}"
           >[[${tag.spec.displayName}]]</a
         >
       </th:block>

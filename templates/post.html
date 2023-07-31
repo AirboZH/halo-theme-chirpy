@@ -122,13 +122,13 @@
       <i class="far fa-folder-open fa-fw me-1"></i>
       <th:block th:each="category, index: ${post.categories}">
         <a
-          th:href="@{'categories/'+${category.spec.slug}}"
+          th:href="@{'/categories/'+${category.spec.slug}}"
           th:if="${index.count lt index.size}"
         >
           [[${category.spec.displayName + ", "}]]
         </a>
         <a
-          th:href="@{'categories/'+${category.spec.slug}}"
+          th:href="@{'/categories/'+${category.spec.slug}}"
           th:if="${index.count eq index.size}"
         >
           [[${category.spec.displayName}]]
@@ -143,7 +143,7 @@
       <a
         class="post-tag no-text-decoration"
         th:each="tag, index : ${post.tags}"
-        th:href="@{'tag/'+${tag.spec.slug}}"
+        th:href="@{'/tags/'+${tag.spec.slug}}"
       >
         [[${tag.spec.displayName}]]
       </a>
