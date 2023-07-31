@@ -6,14 +6,14 @@ labels: question
 
 **NOTE:** Before you start, the following should be completed.
 
-- Read [Wiki][wiki] to understand the usage and the correct effect of functional design.
 - Make sure no [similar issue(including closed ones)][issues] exists.
-- Try to find the answer on [Jekyll Forum][forum] and [StackOverflow][stack_overflow].
+- Try to find the answer on [Halo Forum][forum] and [Halo Docs][halo_docs].
 
-[wiki]: https://github.com/cotes2020/jekyll-theme-chirpy/wiki
-[issues]: https://github.com/cotes2020/jekyll-theme-chirpy/issues?q=is%3Aissue
-[forum]: https://talk.jekyllrb.com/
-[stack_overflow]: https://stackoverflow.com/questions/tagged/jekyll
+[issues]: https://github.com/AirboZH/halo-theme-chirpy/issues
+
+[forum]: https://bbs.halo.run
+
+[halo_docs]: https://docs.halo.run
 
 ## Description
 
