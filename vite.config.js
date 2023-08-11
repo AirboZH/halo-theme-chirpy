@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import { globSync } from "glob";
 import path from "path";
 import { fileURLToPath } from "url";
+import copy from "rollup-plugin-copy";
 
 const ASSETS_BASE = `/assets/dist/`;
 
@@ -30,7 +31,21 @@ export default defineConfig({
         },
       },
     },
-    sourcemap: false,
+    sourcemap: true,
     chunkSizeWarningLimit: 1024
   },
-})
+  plugins: [
+    copy({
+      targets: [
+        { src: "node_modules/@fortawesome/fontawesome-free", dest: "templates/assets/lib/" },
+        { src: "node_modules/bootstrap/dist/", dest: "templates/assets/lib/bootstrap/" },
+        { src: "node_modules/jquery/dist/", dest: "templates/assets/lib/jquery/" },
+        { src: "node_modules/magnific-popup/dist/", dest: "templates/assets/lib/magnific-popup/" },
+        { src: "node_modules/tocbot/dist/", dest: "templates/assets/lib/tocbot/" }
+      ],
+      hook: "generateBundle",
+      copyOnce: false,
+      flatten: true
+    })
+  ]
+});

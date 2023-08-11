@@ -1,6 +1,6 @@
 {
   "name": "halo-theme-chirpy",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A minimal, responsive and feature-rich Halo theme for technical writing.",
   "scripts": {
     "build": "npm run sass && vite build",
@@ -33,6 +33,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1",
+    "rollup-plugin-copy": "^3.4.0",
     "sass": "^1.63.6",
     "stylelint": "^15.3.0",
     "stylelint-config-prettier-scss": "^1.0.0",
@@ -40,6 +41,12 @@
     "vite": "^4.4.4"
   },
   "dependencies": {
-    "glob": "^10.3.3"
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.1",
+    "glob": "^10.3.3",
+    "jquery": "^3.7.0",
+    "magnific-popup": "^1.1.0",
+    "tocbot": "^4.21.1"
   }
 }

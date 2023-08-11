@@ -16,7 +16,7 @@ toc:
   js: /assets/lib/tocbot/tocbot.min.js
 
 fontawesome:
-  css: /assets/lib/fontawesome-free/css/all.min.css
+  css: /assets/lib/fontawesome-free/css/fontawesome-free.all.min.css
 
 search:
   js: /assets/lib/simple-jekyll-search/simple-jekyll-search.min.js
