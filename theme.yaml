@@ -13,5 +13,5 @@ spec:
   repo: https://github.com/AirboZH/halo-theme-chirpy.git
   settingName: "halo-theme-chirpy-setting"
   configMapName: "halo-theme-chirpy-configMap"
-  version: 1.0.1
+  version: 1.0.2
   require: 2.0.0
