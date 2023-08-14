@@ -1,36 +1,43 @@
-import { defineConfig } from "vite";
-import { globSync } from "glob";
-import path from "path";
-import { fileURLToPath } from "url";
+import { defineConfig } from 'vite';
+import { fileURLToPath } from 'url';
+import inject from '@rollup/plugin-inject';
 
-const ASSETS_BASE = `/assets/dist/`;
-
-//获取package版本
-const pkg = require("./package.json");
-const version = pkg.version || "0.0.0";
+import path from 'path';
 
 export default defineConfig({
+  root: 'src',
+  base: '/themes/halo-theme-chirpy/assets/dist/',
   build: {
-    outDir: "templates" + ASSETS_BASE,
+    outDir: fileURLToPath(new URL('./templates/assets/dist/', import.meta.url)),
+    emptyOutDir: true,
+    manifest: true,
+    minify: true,
+    cssMinify: true,
     rollupOptions: {
-      input: Object.fromEntries(
-        globSync(["src/js/**/*.js", "src/css/style.css"]).map((file) => [
-          path.relative("src", file.slice(0, file.length - path.extname(file).length)),
-          fileURLToPath(new URL(file, import.meta.url)),
-        ])
-      ),
+      input: path.resolve(__dirname, 'src/main.js'),
       output: {
-        format: "es",
-        entryFileNames: `[name]-v${version}.min.js`,
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name && assetInfo.name.endsWith(".css")) {
-            return `css/[name]-v${version}.min.[ext]`;
-          }
-          return `[name]-v${version}.min.[ext]`;
-        },
-      },
+        entryFileNames: `[name].js`,
+        assetFileNames: '[name][extname]',
+        chunkFileNames: `[name].js`,
+        manualChunks: {
+          bootstrap: ['bootstrap'],
+          jquery: ['jquery'],
+          magnific_popup: ['magnific-popup'],
+          tocbot: ['tocbot']
+        }
+      }
     },
-    sourcemap: false,
-    chunkSizeWarningLimit: 1024
+    sourcemap: true
   },
-})
+  plugins: [
+    inject({
+      $: 'jquery'
+    })
+  ],
+  optimizeDeps: {
+    include: ['jquery']
+  },
+  server: {
+    origin: 'http://localhost:5173'
+  }
+});

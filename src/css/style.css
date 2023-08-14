@@ -29,6 +29,8 @@
 * Mainly scss modules, only imported to `assets/css/main.scss`
 */
 /* ---------- scss placeholder --------- */
+@import "bootstrap/dist/css/bootstrap.css";
+@import "@fortawesome/fontawesome-free/css/all.css";
 #search-results a, h5, h4, h3, h2, h1 {
   color: var(--heading-color);
   font-weight: 400;

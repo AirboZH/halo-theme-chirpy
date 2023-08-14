@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/AirboZH/halo-theme-chirpy",
   "devDependencies": {
+    "@rollup/plugin-inject": "^5.0.3",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -40,6 +41,12 @@
     "vite": "^4.4.4"
   },
   "dependencies": {
-    "glob": "^10.3.3"
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.1",
+    "glob": "^10.3.3",
+    "jquery": "^3.7.0",
+    "magnific-popup": "^1.1.0",
+    "tocbot": "^4.21.1"
   }
 }

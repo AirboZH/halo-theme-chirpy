@@ -5,11 +5,32 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@fortawesome/fontawesome-free':
+    specifier: ^6.4.2
+    version: 6.4.2
+  '@popperjs/core':
+    specifier: ^2.11.8
+    version: 2.11.8
+  bootstrap:
+    specifier: ^5.3.1
+    version: 5.3.1(@popperjs/core@2.11.8)
   glob:
     specifier: ^10.3.3
     version: 10.3.3
+  jquery:
+    specifier: ^3.7.0
+    version: 3.7.0
+  magnific-popup:
+    specifier: ^1.1.0
+    version: 1.1.0
+  tocbot:
+    specifier: ^4.21.1
+    version: 4.21.1
 
 devDependencies:
+  '@rollup/plugin-inject':
+    specifier: ^5.0.3
+    version: 5.0.3
   eslint:
     specifier: ^8.28.0
     version: 8.28.0
@@ -315,6 +336,12 @@ packages:
       - supports-color
     dev: true
 
+  /@fortawesome/fontawesome-free@6.4.2:
+    resolution: { integrity: sha512-m5cPn3e2+FDCOgi1mz0RexTUvvQibBebOUlUlW0+YrMjDTPkiJ6VTKukA1GRsvRw+12KyJndNjj0O4AgTxm2Pg== }
+    engines: { node: '>=6' }
+    requiresBuild: true
+    dev: false
+
   /@humanwhocodes/config-array@0.11.10:
     resolution: {integrity: sha512-KVVjQmNUepDVGXNuoRRdmmEjruj0KfiGSbS8LVc12LMsWDQzRXJ0qdhN8L8uUigKpfEHRhlaQFY0ib1tnUbNeQ==}
     engines: {node: '>=10.10.0'}
@@ -347,6 +374,10 @@ packages:
       wrap-ansi-cjs: /wrap-ansi@7.0.0
     dev: false
 
+  /@jridgewell/sourcemap-codec@1.4.15:
+    resolution: { integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg== }
+    dev: true
+
   /@nodelib/fs.scandir@2.1.5:
     resolution: { integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g== }
     engines: { node: '>= 8' }
@@ -374,6 +405,42 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@popperjs/core@2.11.8:
+    resolution: { integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A== }
+    dev: false
+
+  /@rollup/plugin-inject@5.0.3:
+    resolution: { integrity: sha512-411QlbL+z2yXpRWFXSmw/teQRMkXcAAC8aYTemc15gwJRpvEVDQwoe+N/HTFD8RFG8+88Bme9DK2V9CVm7hJdA== }
+    engines: { node: '>=14.0.0' }
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@rollup/pluginutils': 5.0.3
+      estree-walker: 2.0.2
+      magic-string: 0.27.0
+    dev: true
+
+  /@rollup/pluginutils@5.0.3:
+    resolution: { integrity: sha512-hfllNN4a80rwNQ9QCxhxuHCGHMAvabXqxNdaChUSSadMre7t4iEUI6fFAhBOn/eIYTgYVhBv7vCLsAJ4u3lf3g== }
+    engines: { node: '>=14.0.0' }
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      '@types/estree': 1.0.1
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+    dev: true
+
+  /@types/estree@1.0.1:
+    resolution: { integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA== }
+    dev: true
 
   /@types/minimist@1.2.2:
     resolution: { integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ== }
@@ -480,6 +547,14 @@ packages:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: { node: '>=8' }
     dev: true
+
+  /bootstrap@5.3.1(@popperjs/core@2.11.8):
+    resolution: { integrity: sha512-jzwza3Yagduci2x0rr9MeFSORjcHpt0lRZukZPZQJT1Dth5qzV7XcgGqYzi39KGAVYR8QEDVoO0ubFKOxzMG+g== }
+    peerDependencies:
+      '@popperjs/core': ^2.11.8
+    dependencies:
+      '@popperjs/core': 2.11.8
+    dev: false
 
   /brace-expansion@1.1.11:
     resolution: { integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA== }
@@ -846,6 +921,10 @@ packages:
     engines: {node: '>=4.0'}
     dev: true
 
+  /estree-walker@2.0.2:
+    resolution: { integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w== }
+    dev: true
+
   /esutils@2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
@@ -1185,6 +1264,10 @@ packages:
       '@pkgjs/parseargs': 0.11.0
     dev: false
 
+  /jquery@3.7.0:
+    resolution: { integrity: sha512-umpJ0/k8X0MvD1ds0P9SfowREz2LenHsQaxSohMZ5OMNEU2r0tf8pdeEFTHMFxWVxKNyU9rTtK3CWzUCTKJUeQ== }
+    dev: false
+
   /js-sdsl@4.4.1:
     resolution: { integrity: sha512-6Gsx8R0RucyePbWqPssR8DyfuXmLBooYN5cZFZKjHGnQuaf7pEzhtpceagJxVu4LqhYY5EYA7nko3FmeHZ1KbA== }
     dev: true
@@ -1270,6 +1353,18 @@ packages:
     dependencies:
       yallist: 4.0.0
     dev: true
+
+  /magic-string@0.27.0:
+    resolution: { integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA== }
+    engines: { node: '>=12' }
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.15
+    dev: true
+
+  /magnific-popup@1.1.0:
+    resolution: { integrity: sha1-PnNixb0Y9nhf6Z5Z0BPiCvM9MEk= }
+    engines: { node: '>= 0.8.0' }
+    dev: false
 
   /map-obj@1.0.1:
     resolution: { integrity: sha512-7N/q3lyZ+LVCp7PzuxrJr4KMbBE2hW7BT7YNia330OFxIf4d3r5zVpicP2650l7CPN6RM9zOJRl3NGpqSiw3Eg== }
@@ -1963,6 +2058,10 @@ packages:
     dependencies:
       is-number: 7.0.0
     dev: true
+
+  /tocbot@4.21.1:
+    resolution: { integrity: sha512-IfajhBTeg0HlMXu1f+VMbPef05QpDTsZ9X2Yn1+8npdaXsXg/+wrm9Ze1WG5OS1UDC3qJ5EQN/XOZ3gfXjPFCw== }
+    dev: false
 
   /trim-newlines@3.0.1:
     resolution: {integrity: sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==}
