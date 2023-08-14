@@ -62,15 +62,6 @@ Thanks to [Halo-Dev][halo-dev] for their exceptional work in creating [Halo][hal
 *Chirpy Halo Theme* is published under [MIT License][mit] .  
 Chirpy Halo主题在[MIT许可证][mit]下发布。
 
-*Chirpy Halo Theme* redistributes the following third-party software. We have decided to redistribute all these, instead of using them through a CDN, to allow *Chirpy Halo Theme* to work in cases where Internet connectivity is not available.  
-Chirpy Halo主题重新分发以下第三方软件。我们决定重新分发所有这些软件，而不是通过CDN使用它们，以便在没有网络连接的情况下使Chirpy Halo主题正常工作。
-
-- [Chirpy Jekyll Theme][origin-github]
-
-  Copyright (c) 2019 Cotes Chung
-  [MIT License][jekyll-theme-chirpy-mit]
-
-
 
 [halo]: https://github.com/halo-dev/halo
 [halo-dev]: https://github.com/halo-dev
@@ -78,5 +69,4 @@ Chirpy Halo主题重新分发以下第三方软件。我们决定重新分发所
 [demo]: https://www.airbozh.cn
 [mit]: https://github.com/AirboZH/halo-theme-chirpy/blob/master/LICENSE
 [origin-github]: https://github.com/cotes2020/jekyll-theme-chirpy
-[jekyll-theme-chirpy-mit]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE
 [front-awesome-icons]: https://fontawesome.com/search?o=r&m=free
