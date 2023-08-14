@@ -12,4 +12,3 @@ import './js/page';
 import './js/post';
 
 window.$ = $;
-
