@@ -16,6 +16,11 @@
 
 ## Documentation 文档
 
+### Info 自定义信息
+
+- 您可以在Halo Console `设置-基本设置` 中编辑站点标题和站点副标题和Logo，信息会同步修改在侧栏中
+- 您可以在Halo Console `设置-代码注入` 中编辑页脚
+
 ### Icon 图标
 
 图标使用的是[Font Awesome Free][front-awesome]，你可以在[这里][front-awesome-icons]找到所有的图标。
@@ -65,15 +70,6 @@ Chirpy Halo主题重新分发以下第三方软件。我们决定重新分发所
   Copyright (c) 2019 Cotes Chung
   [MIT License][jekyll-theme-chirpy-mit]
 
-- [Bootstrap][bootstrap]
-
-  Copyright (c) 2011-2023 The Bootstrap Authors
-  [MIT License][bootstrap-mit]
-
-- [Font Awesome Free][front-awesome]
-
-  Copyright 2023 Fonticons, Inc.
-  [MIT License][front-awesome-mit]
 
 
 [halo]: https://github.com/halo-dev/halo
@@ -83,9 +79,4 @@ Chirpy Halo主题重新分发以下第三方软件。我们决定重新分发所
 [mit]: https://github.com/AirboZH/halo-theme-chirpy/blob/master/LICENSE
 [origin-github]: https://github.com/cotes2020/jekyll-theme-chirpy
 [jekyll-theme-chirpy-mit]: https://github.com/cotes2020/jekyll-theme-chirpy/blob/master/LICENSE
-[bootstrap]: https://github.com/twbs/bootstrap
-[bootstrap-mit]: https://github.com/twbs/bootstrap/blob/main/LICENSE
-[front-awesome]: https://fontawesome.com
-[front-awesome-mit]: https://fontawesome.com/license/free
-
 [front-awesome-icons]: https://fontawesome.com/search?o=r&m=free
