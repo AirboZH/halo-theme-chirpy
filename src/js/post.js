@@ -2,8 +2,8 @@ import { basic, initSidebar, initTopbar } from './modules/layouts';
 import {
   imgLazy,
   imgPopup,
-  initLocaleDatetime,
   initClipboard,
+  initLocaleDatetime,
   toc
 } from './modules/plugins';
 

@@ -1,70 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
-  <head th:fragment="head(title)">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: light)"
-      content="#f7f7f7"
-    />
-    <meta
-      name="theme-color"
-      media="(prefers-color-scheme: dark)"
-      content="#1b1b1e"
-    />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-    />
+<head th:fragment="head(title)">
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<meta
+		content="#f7f7f7"
+		media="(prefers-color-scheme: light)"
+		name="theme-color"
+	/>
+	<meta
+		content="#1b1b1e"
+		media="(prefers-color-scheme: dark)"
+		name="theme-color"
+	/>
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta
+		content="black-translucent"
+		name="apple-mobile-web-app-status-bar-style"
+	/>
+	<meta
+		content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+		name="viewport"
+	/>
 
-    <title th:text="${title}"></title>
+	<title th:text="${title}"></title>
 
-    <!--  {% if site.resources.ignore_env != jekyll.environment and site.resources.self_hosted %}-->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-    />
+	<link rel="manifest" th:href="@{/assets/dist/manifest.json}">
+	<link rel="stylesheet" th:href="@{/assets/dist/main.css?v={version}(version=${theme.spec.version})}">
+	<script th:src="@{/assets/dist/main.js?v={version}(version=${theme.spec.version})}" type="module"></script>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" th:href="@{/assets/lib/bootstrap.min.css}" />
-    <link
-      rel="stylesheet"
-      th:href="@{'/assets/dist/css/style-v'+${theme.spec.version}+'.min.css'}"
-    />
-
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
-    />
-
-    <!--  {% if site.toc and page.toc %}-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/tocbot@4.21.0/dist/tocbot.min.css"
-    />
-
-    <!--  {% if page.layout == 'page' or page.layout == 'post' %}-->
-    <!-- Manific Popup -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css"
-    />
-
-    <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script
-      th:src="@{'/assets/dist/js/index-v'+${theme.spec.version}+'.min.js'}"
-      type="module"
-    ></script>
-
-    <th:block th:replace="~{modules/mode-toggle :: mode_toggle()}"></th:block>
-  </head>
+	<th:block th:replace="~{modules/mode-toggle :: mode_toggle()}"></th:block>
+</head>
 </html>

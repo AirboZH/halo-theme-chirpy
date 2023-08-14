@@ -3,3 +3,7 @@
 //append your custom style below
 
 @import "patch/footer";
+
+//import third-party css
+@import "bootstrap/dist/css/bootstrap.css";
+@import "@fortawesome/fontawesome-free/css/all.css";
