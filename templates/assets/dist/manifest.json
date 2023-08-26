@@ -31,22 +31,22 @@
     "file": "fa-v4compatibility.woff2",
     "src": "../node_modules/.pnpm/@fortawesome+fontawesome-free@6.4.2/node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
   },
-  "_bootstrap.js": {
-    "file": "bootstrap.js"
+  "_bootstrap.4c2c0e88.js": {
+    "file": "bootstrap.4c2c0e88.js"
   },
-  "_jquery.js": {
-    "file": "jquery.js"
+  "_jquery.2f7cc6b8.js": {
+    "file": "jquery.2f7cc6b8.js"
   },
-  "_magnific_popup.js": {
-    "file": "magnific_popup.js",
+  "_magnific_popup.410e7646.js": {
+    "file": "magnific_popup.410e7646.js",
     "imports": [
-      "_jquery.js"
+      "_jquery.2f7cc6b8.js"
     ]
   },
-  "_tocbot.js": {
-    "file": "tocbot.js",
+  "_tocbot.561f2cf1.js": {
+    "file": "tocbot.561f2cf1.js",
     "imports": [
-      "_jquery.js"
+      "_jquery.2f7cc6b8.js"
     ]
   },
   "main.css": {
@@ -69,10 +69,10 @@
     ],
     "file": "main.js",
     "imports": [
-      "_jquery.js",
-      "_bootstrap.js",
-      "_magnific_popup.js",
-      "_tocbot.js"
+      "_jquery.2f7cc6b8.js",
+      "_bootstrap.4c2c0e88.js",
+      "_magnific_popup.410e7646.js",
+      "_tocbot.561f2cf1.js"
     ],
     "isEntry": true,
     "src": "main.js"
