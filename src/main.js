@@ -3,7 +3,7 @@ import 'bootstrap';
 import 'magnific-popup';
 import 'tocbot';
 
-import './css/style.css';
+import './css/style.scss';
 import './js/categories';
 import './js/commons';
 import './js/home';

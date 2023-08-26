@@ -4,7 +4,7 @@
   lang="en"
   th:fragment="html (title,content)"
 >
-<th:block th:replace="~{modules/head :: head(${title})}" />
+  <th:block th:replace="~{modules/head :: head(${title})}" />
 
   <body>
     <th:block th:replace="~{modules/sidebar :: sidebar()}" />
