@@ -27642,3 +27642,7 @@ footer p:nth-child(n+2):before {
     margin: 0 .75rem;
     opacity: .8
 }
+
+.card-title {
+    color: var(--heading-color)
+}

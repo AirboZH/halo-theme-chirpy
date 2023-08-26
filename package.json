@@ -1,14 +1,13 @@
 {
   "name": "halo-theme-chirpy",
-  "version": "1.0.2"
+  "version": "1.0.2",
   "description": "A minimal, responsive and feature-rich Halo theme for technical writing.",
   "scripts": {
-    "build": "npm run sass && vite build",
+    "build": "vite build",
     "lint": "eslint ./src --ext .js --ignore-path .gitignore",
     "stylelint": "stylelint ./src/css/patch/**/*.scss",
     "prettier": "prettier --write './src/css/patch/**/*.scss' './templates/**/*.html'",
-    "prettier-win": "prettier --write \"./src/css/patch/**/*.scss\" \"./templates/**/*.html\"",
-    "sass": "sass ./src/css/style.scss ./src/css/style.css"
+    "prettier-win": "prettier --write \"./src/css/patch/**/*.scss\" \"./templates/**/*.html\""
   },
   "keywords": [
     "halo",
