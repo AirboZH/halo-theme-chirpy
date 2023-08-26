@@ -4,17 +4,17 @@
   content = ~{modules/page :: page(~{::content}, 'tags')})}"
   xmlns:th="https://www.thymeleaf.org"
 >
-<div
-  class="d-flex flex-wrap mx-xl-2"
-  id="tags"
-  th:fragment="content"
-  th:with="tags = ${tagFinder.listAll()}"
->
-  <div th:each="tag : ${tags}">
-    <a class="tag" th:href="${tag.status.permalink}">
-      [[${tag.spec.displayName}]]
-      <span class="text-muted">[[${tag.status.visiblePostCount}]]</span>
-    </a>
+  <div
+    class="d-flex flex-wrap mx-xl-2"
+    id="tags"
+    th:fragment="content"
+    th:with="tags = ${tagFinder.listAll()}"
+  >
+    <div th:each="tag : ${tags}">
+      <a class="tag" th:href="${tag.status.permalink}">
+        [[${tag.spec.displayName}]]
+        <span class="text-muted">[[${tag.status.visiblePostCount}]]</span>
+      </a>
+    </div>
   </div>
-</div>
 </html>

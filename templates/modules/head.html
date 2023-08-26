@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
-<head th:fragment="head(title)">
-	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-	<meta
-		content="#f7f7f7"
-		media="(prefers-color-scheme: light)"
-		name="theme-color"
-	/>
-	<meta
-		content="#1b1b1e"
-		media="(prefers-color-scheme: dark)"
-		name="theme-color"
-	/>
-	<meta content="yes" name="apple-mobile-web-app-capable" />
-	<meta
-		content="black-translucent"
-		name="apple-mobile-web-app-status-bar-style"
-	/>
-	<meta
-		content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
-		name="viewport"
-	/>
+  <head th:fragment="head(title)">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta
+      content="#f7f7f7"
+      media="(prefers-color-scheme: light)"
+      name="theme-color"
+    />
+    <meta
+      content="#1b1b1e"
+      media="(prefers-color-scheme: dark)"
+      name="theme-color"
+    />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta
+      content="black-translucent"
+      name="apple-mobile-web-app-status-bar-style"
+    />
+    <meta
+      content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+      name="viewport"
+    />
 
-	<title th:text="${title}"></title>
+    <title th:text="${title}"></title>
 
-	<link rel="manifest" th:href="@{/assets/dist/manifest.json}">
-	<link rel="stylesheet" th:href="@{/assets/dist/main.css?v={version}(version=${theme.spec.version})}">
-	<script th:src="@{/assets/dist/main.js?v={version}(version=${theme.spec.version})}" type="module"></script>
+    <link rel="manifest" th:href="@{/assets/dist/manifest.json}" />
+    <link
+      rel="stylesheet"
+      th:href="@{/assets/dist/main.css?v={version}(version=${theme.spec.version})}"
+    />
+    <script
+      th:src="@{/assets/dist/main.js?v={version}(version=${theme.spec.version})}"
+      type="module"
+    ></script>
 
-	<th:block th:replace="~{modules/mode-toggle :: mode_toggle()}"></th:block>
-</head>
+    <th:block th:replace="~{modules/mode-toggle :: mode_toggle()}"></th:block>
+  </head>
 </html>

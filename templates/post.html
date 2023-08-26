@@ -4,14 +4,14 @@
   content = ~{modules/page :: page(~{::content}, 'post')})}"
   xmlns:th="https://www.thymeleaf.org"
 >
-<th:block th:fragment="content">
-  <h1 data-toc-skip>[[${post.spec.title}]]</h1>
+  <th:block th:fragment="content">
+    <h1 data-toc-skip>[[${post.spec.title}]]</h1>
 
-  <div class="post-meta text-muted">
-    <!-- published date -->
-    <span
-      th:with="days=${(new java.util.Date().getTime()-post.spec.publishTime.toEpochMilli())/86400000}"
-    >
+    <div class="post-meta text-muted">
+      <!-- published date -->
+      <span
+        th:with="days=${(new java.util.Date().getTime()-post.spec.publishTime.toEpochMilli())/86400000}"
+      >
         Posted
         <em
           class
@@ -19,7 +19,7 @@
           data-bs-toggle="tooltip"
           th:data-bs-title="${#dates.format(post.spec.publishTime,'yyyy年 MM月 d日  E  h:mm a')}"
           th:if="${days > 30}"
-        >[[${#dates.format(post.spec.publishTime,'yyyy年 MM月 d日')}]]</em
+          >[[${#dates.format(post.spec.publishTime,'yyyy年 MM月 d日')}]]</em
         >
         <em
           class
@@ -41,11 +41,11 @@
         </em>
       </span>
 
-    <!-- lastmod date -->
-    <!--TODO publish time != update time-->
-    <span
-      th:with="days=${(new java.util.Date().getTime()-post.status.lastModifyTime.toEpochMilli())/86400000}"
-    >
+      <!-- lastmod date -->
+      <!--TODO publish time != update time-->
+      <span
+        th:with="days=${(new java.util.Date().getTime()-post.status.lastModifyTime.toEpochMilli())/86400000}"
+      >
         Updated
         <em
           class
@@ -53,7 +53,7 @@
           data-bs-toggle="tooltip"
           th:data-bs-title="${#dates.format(post.status.lastModifyTime,'yyyy年 MM月 d日  E  h:mm a')}"
           th:if="${days > 30}"
-        >[[${#dates.format(post.status.lastModifyTime,'yyyy年 MM月
+          >[[${#dates.format(post.status.lastModifyTime,'yyyy年 MM月
           d日')}]]</em
         >
         <em
@@ -71,102 +71,102 @@
           data-bs-toggle="tooltip"
           th:data-bs-title="${#dates.format(post.status.lastModifyTime,'yyyy年 MM月 d日  E  h:mm a')}"
           th:if="${days == 0}"
-        >最近</em
+          >最近</em
         >
       </span>
 
-    <div class="mt-3 mb-3" th:if="not ${#strings.isEmpty(post.spec.cover)}">
-      <img
-        class="lazyloaded"
-        h="630"
-        th:alt="${post.spec.title}"
-        th:src="${post.spec.cover}"
-        w="1200"
-      />
-      <!--  TODO    <figcaption class="text-center pt-2 pb-2">{{ page.image.alt }}</figcaption>-->
-    </div>
+      <div class="mt-3 mb-3" th:if="not ${#strings.isEmpty(post.spec.cover)}">
+        <img
+          class="lazyloaded"
+          h="630"
+          th:alt="${post.spec.title}"
+          th:src="${post.spec.cover}"
+          w="1200"
+        />
+        <!--  TODO    <figcaption class="text-center pt-2 pb-2">{{ page.image.alt }}</figcaption>-->
+      </div>
 
-    <div class="d-flex justify-content-between">
-      <!-- author(s) -->
-      <span>
+      <div class="d-flex justify-content-between">
+        <!-- author(s) -->
+        <span>
           By
           <em th:each="contributor : ${post.contributors}">
             [[${contributor.displayName}]]
           </em>
         </span>
 
-      <div>
-        <!-- read time -->
-        <span
-          class="readtime"
-          data-bs-original-title="610 words"
-          data-bs-placement="bottom"
-          data-bs-toggle="tooltip"
-        >
+        <div>
+          <!-- read time -->
+          <span
+            class="readtime"
+            data-bs-original-title="610 words"
+            data-bs-placement="bottom"
+            data-bs-toggle="tooltip"
+          >
             <em>3 min</em>
             read
           </span>
+        </div>
       </div>
+      <!-- .d-flex -->
     </div>
-    <!-- .d-flex -->
-  </div>
-  <!-- .post-meta -->
+    <!-- .post-meta -->
 
-  <div class="post-content">
-    <th:block th:utext="${post.content.content}" />
-  </div>
+    <div class="post-content">
+      <th:block th:utext="${post.content.content}" />
+    </div>
 
-  <div class="post-tail-wrapper text-muted">
-    <!-- categories -->
-    <div class="post-meta mb-3" th:if="${#lists.size(post.categories) ge 1}">
-      <i class="far fa-folder-open fa-fw me-1"></i>
-      <th:block th:each="category, index: ${post.categories}">
+    <div class="post-tail-wrapper text-muted">
+      <!-- categories -->
+      <div class="post-meta mb-3" th:if="${#lists.size(post.categories) ge 1}">
+        <i class="far fa-folder-open fa-fw me-1"></i>
+        <th:block th:each="category, index: ${post.categories}">
+          <a
+            th:href="@{'/categories/'+${category.spec.slug}}"
+            th:if="${index.count lt index.size}"
+          >
+            [[${category.spec.displayName + ", "}]]
+          </a>
+          <a
+            th:href="@{'/categories/'+${category.spec.slug}}"
+            th:if="${index.count eq index.size}"
+          >
+            [[${category.spec.displayName}]]
+          </a>
+        </th:block>
+      </div>
+
+      <!-- tags -->
+
+      <div class="post-tags" th:if="${#lists.size(post.tags) ge 1}">
+        <i class="fa fa-tags fa-fw me-1"></i>
         <a
-          th:href="@{'/categories/'+${category.spec.slug}}"
-          th:if="${index.count lt index.size}"
+          class="post-tag no-text-decoration"
+          th:each="tag, index : ${post.tags}"
+          th:href="@{'/tags/'+${tag.spec.slug}}"
         >
-          [[${category.spec.displayName + ", "}]]
+          [[${tag.spec.displayName}]]
         </a>
-        <a
-          th:href="@{'/categories/'+${category.spec.slug}}"
-          th:if="${index.count eq index.size}"
-        >
-          [[${category.spec.displayName}]]
-        </a>
-      </th:block>
+      </div>
+
+      <!--TODO license && sharing-->
+      <!--    <div-->
+      <!--      class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"-->
+      <!--    >-->
+      <!--      <div class="license-wrapper">-->
+      <!--        {% if site.data.locales[lang].copyright.license.template %} {% capture-->
+      <!--        _replacement %}-->
+      <!--        <a href="{{ site.data.locales[lang].copyright.license.link }}">-->
+      <!--          {{ site.data.locales[lang].copyright.license.name }}-->
+      <!--        </a>-->
+      <!--        {% endcapture %} {{ site.data.locales[lang].copyright.license.template |-->
+      <!--        replace: ':LICENSE_NAME', _replacement }} {% endif %}-->
+      <!--      </div>-->
+
+      <!--      {% include post-sharing.html lang=lang %}-->
+      <!--    </div>-->
+      <!-- .post-tail-bottom -->
     </div>
-
-    <!-- tags -->
-
-    <div class="post-tags" th:if="${#lists.size(post.tags) ge 1}">
-      <i class="fa fa-tags fa-fw me-1"></i>
-      <a
-        class="post-tag no-text-decoration"
-        th:each="tag, index : ${post.tags}"
-        th:href="@{'/tags/'+${tag.spec.slug}}"
-      >
-        [[${tag.spec.displayName}]]
-      </a>
-    </div>
-
-    <!--TODO license && sharing-->
-    <!--    <div-->
-    <!--      class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"-->
-    <!--    >-->
-    <!--      <div class="license-wrapper">-->
-    <!--        {% if site.data.locales[lang].copyright.license.template %} {% capture-->
-    <!--        _replacement %}-->
-    <!--        <a href="{{ site.data.locales[lang].copyright.license.link }}">-->
-    <!--          {{ site.data.locales[lang].copyright.license.name }}-->
-    <!--        </a>-->
-    <!--        {% endcapture %} {{ site.data.locales[lang].copyright.license.template |-->
-    <!--        replace: ':LICENSE_NAME', _replacement }} {% endif %}-->
-    <!--      </div>-->
-
-    <!--      {% include post-sharing.html lang=lang %}-->
-    <!--    </div>-->
-    <!-- .post-tail-bottom -->
-  </div>
-  <!-- div.post-tail-wrapper -->
-</th:block>
+    <!-- div.post-tail-wrapper -->
+  </th:block>
 </html>
