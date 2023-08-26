@@ -18,7 +18,7 @@ export default defineConfig({
       output: {
         entryFileNames: `[name].js`,
         assetFileNames: '[name][extname]',
-        chunkFileNames: `[name].js`,
+        chunkFileNames: `[name].[hash].js`,
         manualChunks: {
           bootstrap: ['bootstrap'],
           jquery: ['jquery'],
