@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import 'jquery';
 import 'bootstrap';
 import 'magnific-popup';
 import 'tocbot';
@@ -10,5 +10,3 @@ import './js/home';
 import './js/misc';
 import './js/page';
 import './js/post';
-
-window.$ = $;

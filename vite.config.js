@@ -31,11 +31,12 @@ export default defineConfig({
   },
   plugins: [
     inject({
-      $: 'jquery'
+      $: 'jquery',
+      bootstrap: ['bootstrap', '*']
     })
   ],
   optimizeDeps: {
-    include: ['jquery']
+    include: ['jquery', 'bootstrap']
   },
   server: {
     origin: 'http://localhost:5173'
