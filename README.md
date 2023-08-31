@@ -15,7 +15,9 @@
 </div>
 
 ## Wiki
-主题使用说明详见[Wiki](https://github.com/AirboZH/halo-theme-chirpy/wiki)
+**⭐主题全部效果需要和[插件](https://github.com/AirboZH/halo-plugin-chirpy)搭配使用**
+
+**📕主题使用说明详见[Wiki](https://github.com/AirboZH/halo-theme-chirpy/wiki)**
 
 ## Credits 致谢
 
