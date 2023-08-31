@@ -14,38 +14,8 @@
 
 </div>
 
-## Documentation 文档
-
-### Info 自定义信息
-
-- 您可以在Halo Console `设置-基本设置` 中编辑站点标题和站点副标题和Logo，信息会同步修改在侧栏中
-- 您可以在Halo Console `设置-代码注入` 中编辑页脚
-
-### Icon 图标
-
-图标使用的是[Font Awesome Free][front-awesome]，你可以在[这里][front-awesome-icons]找到所有的图标。
-
-挑选到图标后可以在：
-
-1. 主题配置侧栏页的图标输入框填写图标数据
-
-![侧栏图标](https://cdn.airbozh.cn/blog/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230731091335.png)
-
-2. 编辑菜单项的元数据中填写Key为`icon`的图标数据
-
-![菜单图标](https://cdn.airbozh.cn/blog/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230731091516.png)
-
-下面提供一些常用图标
-
-| 图标       | 代码                    |
-|----------|-----------------------|
-| Github   | fab fa-github         |
-| 邮件(信封)   | fas fa-envelope       |
-| RSS      | fas fa-rss            |
-| 标签       | fas fa-tag            |
-| 分类(交错线条) | fas fa-bars-staggered |
-| 归档(收件箱)  | fas fa-inbox          |
-| 关于(信息)   | fas fa-circle-info    |
+## Wiki
+主题使用说明详见[Wiki](https://github.com/AirboZH/halo-theme-chirpy/wiki)
 
 ## Credits 致谢
 
