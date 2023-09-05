@@ -95,15 +95,15 @@
           </em>
         </span>
 
-        <div>
+        <div th:with="wordsCount = ${#strings.length(post.content.content)}">
           <!-- read time -->
           <span
             class="readtime"
-            data-bs-original-title="610 words"
+            th:data-bs-original-title="${wordsCount}+' words'"
             data-bs-placement="bottom"
             data-bs-toggle="tooltip"
           >
-            <em>3 min</em>
+            <em>[[${wordsCount/450 + "~" + wordsCount/350}]] min</em>
             read
           </span>
         </div>
