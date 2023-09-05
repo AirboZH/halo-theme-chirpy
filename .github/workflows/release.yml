@@ -1,0 +1,53 @@
+name: release-action
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: halo-theme-chirpy-${{ github.sha }}
+          path: dist/
+
+      - name: Compress zip
+        run: |
+          PACKAGE_VERSION=$(sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json)
+          PRE_ZIP_FOLDER=halo-theme-chirpy-${PACKAGE_VERSION}
+          ARTIFACT_NAME=${PRE_ZIP_FOLDER}.zip
+          ARTIFACT_PATHNAME=dist/${ARTIFACT_NAME}
+          echo "halo-theme-chirpy@$PACKAGE_VERSION"
+          echo "RELEASE_ID=${{ github.event.release.id }}" >> $GITHUB_ENV
+          echo "ARTIFACT_PATHNAME=${ARTIFACT_PATHNAME}" >> $GITHUB_ENV
+          echo "ARTIFACT_NAME=${ARTIFACT_NAME}" >> $GITHUB_ENV
+          cd dist
+          zip -r $ARTIFACT_NAME templates theme.yaml settings.yaml LICENSE
+
+      - name: Upload a release asset
+        uses: actions/github-script@v2.1.0
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const fs = require('fs').promises;
+            const { repo: { owner, repo }, sha } = context;
+            console.log({ owner, repo, sha });
+            const releaseId = process.env.RELEASE_ID
+            const artifactPathName = process.env.ARTIFACT_PATHNAME
+            const artifactName = process.env.ARTIFACT_NAME
+            console.log('Releasing', releaseId, artifactPathName, artifactName)
+            await github.repos.uploadReleaseAsset({
+            owner, repo,
+            release_id: releaseId,
+            name: artifactName,
+            data: await fs.readFile(artifactPathName)
+            });
