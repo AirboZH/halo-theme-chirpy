@@ -14,4 +14,4 @@ spec:
   settingName: "halo-theme-chirpy-setting"
   configMapName: "halo-theme-chirpy-configMap"
   version: 1.0.4
-  require: 2.0.0
+  require: ">=2.0.0"
