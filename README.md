@@ -34,6 +34,29 @@ The avatar and favicon design come from [Clipart Max][image].
 Thanks to [Halo-Dev][halo-dev] for their exceptional work in creating [Halo][halo], which is truly a fantastic project and ecosystem that this theme is a part of.  
 感谢[Halo-Dev][halo-dev]团队为创建[Halo][halo]所做的卓越工作，[Halo][halo]是一个非常出色的项目和生态系统，而本主题是其中的一部分。
 
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://airbozh.cn"><img src="https://avatars.githubusercontent.com/u/50261327?v=4?s=100" width="100px;" alt="AirboZH"/><br /><sub><b>AirboZH</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/commits?author=AirboZH" title="Code">💻</a> <a href="#maintenance-AirboZH" title="Maintenance">🚧</a> <a href="https://github.com/AirboZH/halo-theme-chirpy/commits?author=AirboZH" title="Documentation">📖</a> <a href="https://github.com/AirboZH/halo-theme-chirpy/pulls?q=is%3Apr+reviewed-by%3AAirboZH" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/GodlessLiu"><img src="https://avatars.githubusercontent.com/u/110895612?v=4?s=100" width="100px;" alt="Hilary Liu"/><br /><sub><b>Hilary Liu</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/commits?author=GodlessLiu" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
 ## License
 
 *Chirpy Halo Theme* is published under [MIT License][mit] .  
@@ -47,26 +70,3 @@ Chirpy Halo主题在[MIT许可证][mit]下发布。
 [mit]: https://github.com/AirboZH/halo-theme-chirpy/blob/master/LICENSE
 [origin-github]: https://github.com/cotes2020/jekyll-theme-chirpy
 [front-awesome-icons]: https://fontawesome.com/search?o=r&m=free
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/GodlessLiu"><img src="https://avatars.githubusercontent.com/u/110895612?v=4?s=100" width="100px;" alt="Hilary Liu"/><br /><sub><b>Hilary Liu</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/commits?author=GodlessLiu" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="http://airbozh.cn"><img src="https://avatars.githubusercontent.com/u/50261327?v=4?s=100" width="100px;" alt="AirboZH"/><br /><sub><b>AirboZH</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/commits?author=AirboZH" title="Code">💻</a> <a href="#maintenance-AirboZH" title="Maintenance">🚧</a> <a href="https://github.com/AirboZH/halo-theme-chirpy/commits?author=AirboZH" title="Documentation">📖</a> <a href="https://github.com/AirboZH/halo-theme-chirpy/pulls?q=is%3Apr+reviewed-by%3AAirboZH" title="Reviewed Pull Requests">👀</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
