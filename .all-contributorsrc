@@ -8,15 +8,6 @@
   "commitConvention": "angular",
   "contributors": [
     {
-      "login": "GodlessLiu",
-      "name": "Hilary Liu",
-      "avatar_url": "https://avatars.githubusercontent.com/u/110895612?v=4",
-      "profile": "https://github.com/GodlessLiu",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
       "login": "AirboZH",
       "name": "AirboZH",
       "avatar_url": "https://avatars.githubusercontent.com/u/50261327?v=4",
@@ -27,8 +18,17 @@
         "doc",
         "review"
       ]
+    },
+    {
+      "login": "GodlessLiu",
+      "name": "Hilary Liu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/110895612?v=4",
+      "profile": "https://github.com/GodlessLiu",
+      "contributions": [
+        "code"
+      ]
     }
-  ],
+  ]
   "contributorsPerLine": 7,
   "skipCi": true,
   "repoType": "github",
