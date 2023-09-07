@@ -15,6 +15,18 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "AirboZH",
+      "name": "AirboZH",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50261327?v=4",
+      "profile": "http://airbozh.cn",
+      "contributions": [
+        "code",
+        "maintenance",
+        "doc",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
