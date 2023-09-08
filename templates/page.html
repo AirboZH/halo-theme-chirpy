@@ -9,5 +9,13 @@
     <div class="post-content">
       <th:block th:utext="${singlePage.content.content}" />
     </div>
+    <div id="comment">
+      <halo:comment
+        group="content.halo.run"
+        kind="Post"
+        th:attr="name=${singlePage.metadata.name}"
+        colorScheme="document.documentElement.getAttribute('data-mode') === 'light' ? 'light' : 'dark'"
+      />
+    </div>
   </th:block>
 </html>
