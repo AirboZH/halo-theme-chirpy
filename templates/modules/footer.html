@@ -3,18 +3,18 @@
   <footer th:fragment="footer()">
     <div class="container px-lg-4">
       <div
-        class="d-flex justify-content-center align-items-center text-muted mx-md-3"
+        class=" d-flex justify-content-center text-muted flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3 break-words"
       >
         <halo:footer />
-        <p>
+        <span class="ml-2">
           <a
             href="https://beian.miit.gov.cn"
             target="_blank"
             rel="noopener"
-            >[[${theme.config.beian.icp_text}]]</a
+            >[[${theme.config.basics.icp_text}]]</a
           >
-        </p>
-        <p>
+        </span>
+        <span>
           Using the
           <a href="https://halo.run" target="_blank" rel="noopener">Halo</a>
           theme
@@ -24,23 +24,26 @@
             rel="noopener"
             >Chirpy</a
           >
-        </p>
-
-        <p>
+        </span>
+        <span>
           [['©' + ${#dates.format(new java.util.Date().getTime(), 'yyyy')}]]
           <a th:href="${site.url}">[[${site.title}]]</a>.
-          <!--        TODO copyright-->
-          <!--        <span-->
-          <!--          data-bs-toggle="tooltip"-->
-          <!--          data-bs-placement="top"-->
-          <!--          title="{{ site.data.locales[include.lang].copyright.verbose }}"-->
-          <!--        >-->
-          <!--            {{- site.data.locales[include.lang].copyright.brief -}}-->
-          <!--          </span>-->
-        </p>
-        <br/>
+          <!-- copyright-->
+          <span
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            th:title="${theme.config.basics.footerCopyrightAgreement}"
+          >
+            Some rights reserved.
+          </span>
+        </span>
       </div>
     </div>
   </footer>
 </html>
 
+<style>
+  p::before {
+    content: none;
+  }
+</style>
