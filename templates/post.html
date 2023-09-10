@@ -149,22 +149,36 @@
         </a>
       </div>
 
-      <!--TODO license && sharing-->
-      <!--    <div-->
-      <!--      class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"-->
-      <!--    >-->
-      <!--      <div class="license-wrapper">-->
-      <!--        {% if site.data.locales[lang].copyright.license.template %} {% capture-->
-      <!--        _replacement %}-->
-      <!--        <a href="{{ site.data.locales[lang].copyright.license.link }}">-->
-      <!--          {{ site.data.locales[lang].copyright.license.name }}-->
-      <!--        </a>-->
-      <!--        {% endcapture %} {{ site.data.locales[lang].copyright.license.template |-->
-      <!--        replace: ':LICENSE_NAME', _replacement }} {% endif %}-->
-      <!--      </div>-->
+      <!-- license && sharing -->
+          <div
+            class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"
+          >
+          <div class="license-wrapper">
+            This post is licensed under
+            <a id="myLink" th:href="${theme.config.basics.copyrightAgreementUrl}">
+              [[${theme.config.basics.copyrightAgreement}]]
+            </a>
+            by the author.
+          </div>
 
-      <!--      {% include post-sharing.html lang=lang %}-->
-      <!--    </div>-->
+          <div class="">
+            Share:
+            <button id="copy-link" 
+              aria-label="Copy link" 
+              class="btn small" 
+              onclick="
+                navigator.clipboard.writeText(window.location.href); 
+                this.innerHTML = 'Link copied successfully!'; 
+                setTimeout(function() { 
+                  document.getElementById('copy-link').innerHTML = '<i class=&quot;fa-fw fas fa-link pe-none&quot;></i>'; 
+                }, 2000);
+              "> 
+              <i class="fa-fw fas fa-link pe-none"></i> 
+            </button>
+          </div>
+
+          
+          </div>
       <div id="comment">
         <halo:comment
           group="content.halo.run"
