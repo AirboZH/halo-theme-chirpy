@@ -24,10 +24,17 @@ spec:
             - $formkit: text
               name: icon
               label: 图标
-              value: ''
+              value: ""
               required: true
             - $formkit: text
               name: url
               label: 链接
-              value: ''
+              value: ""
               required: true
+
+    - group: beian
+      label: 备案设置
+      formSchema:
+        - $formkit: text
+          name: icp_text
+          label: ICP备案号
