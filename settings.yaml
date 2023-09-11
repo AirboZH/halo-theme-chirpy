@@ -36,10 +36,6 @@ spec:
       label: 全局设置
       formSchema:
         - $formkit: text
-          name: icp_text
-          label: ICP备案号
-          value: ""
-        - $formkit: text
           name: copyrightAgreement
           label: 版权协议
           value: "CC BY 4.0"
