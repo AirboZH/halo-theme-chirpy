@@ -57,6 +57,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
+## Sponsors 赞助
+[![sponsors](https://github.com/AirboZH/sponsor-images/blob/main/sponsorkit/sponsors.svg)](https://afdian.net/a/airbozh)
+
 ## License
 
 *Chirpy Halo Theme* is published under [MIT License][mit] .  
