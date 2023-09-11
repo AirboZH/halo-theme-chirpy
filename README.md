@@ -8,7 +8,7 @@
 <a href="https://github.com/AirboZH/halo-theme-chirpy/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/AirboZH/halo-theme-chirpy.svg?style=flat-square&include_prereleases" /></a>
 <a href="https://github.com/AirboZH/halo-theme-chirpy/commits"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/AirboZH/halo-theme-chirpy.svg?style=flat-square" /></a>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
   [**Live Demo 演示 →**][demo]
   
@@ -45,6 +45,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="http://airbozh.cn"><img src="https://avatars.githubusercontent.com/u/50261327?v=4?s=100" width="100px;" alt="AirboZH"/><br /><sub><b>AirboZH</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/commits?author=AirboZH" title="Code">💻</a> <a href="#maintenance-AirboZH" title="Maintenance">🚧</a> <a href="https://github.com/AirboZH/halo-theme-chirpy/commits?author=AirboZH" title="Documentation">📖</a> <a href="https://github.com/AirboZH/halo-theme-chirpy/pulls?q=is%3Apr+reviewed-by%3AAirboZH" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/GodlessLiu"><img src="https://avatars.githubusercontent.com/u/110895612?v=4?s=100" width="100px;" alt="Hilary Liu"/><br /><sub><b>Hilary Liu</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/commits?author=GodlessLiu" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://waite.wang"><img src="https://avatars.githubusercontent.com/u/75354124?v=4?s=100" width="100px;" alt="Waite Wang"/><br /><sub><b>Waite Wang</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/commits?author=waite0603" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
