@@ -90,6 +90,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "wan92hen",
+      "name": "BugKing",
+      "avatar_url": "https://avatars.githubusercontent.com/u/27671436?v=4",
+      "profile": "https://github.com/wan92hen",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
