@@ -81,6 +81,15 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "Jamtoal",
+      "name": "Jamtoal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/91370415?v=4",
+      "profile": "https://www.yazizzy.top/",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
