@@ -12,10 +12,9 @@
         <th:block th:if="${not #strings.isEmpty(site.logo)}">
           <img th:src="${site.logo}" width="112" height="112" alt="avatar" />
         </th:block>
-        <th:block
-          th:if="${#strings.isEmpty(site.logo)}"
-          th:text="${#strings.substring(site.title,0,1)}"
-        ></th:block>
+        <th:block th:if="${#strings.isEmpty(site.logo)}">
+          <p th:text="${#strings.substring(site.title,0,1)}" />
+        </th:block>
       </a>
 
       <div class="site-title">
