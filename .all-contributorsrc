@@ -45,6 +45,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "vveg26",
+      "name": "mareep",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62206240?v=4",
+      "profile": "http://mareep.net",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
