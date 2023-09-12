@@ -8,7 +8,7 @@
 <a href="https://github.com/AirboZH/halo-theme-chirpy/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/AirboZH/halo-theme-chirpy.svg?style=flat-square&include_prereleases" /></a>
 <a href="https://github.com/AirboZH/halo-theme-chirpy/commits"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/AirboZH/halo-theme-chirpy.svg?style=flat-square" /></a>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
   [**Live Demo 演示 →**][demo]
   
@@ -53,6 +53,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="http://gpio.me"><img src="https://avatars.githubusercontent.com/u/3754333?v=4?s=100" width="100px;" alt="Cheney Wong"/><br /><sub><b>Cheney Wong</b></sub></a><br /><a href="#ideas-CheneyWong" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.yazizzy.top/"><img src="https://avatars.githubusercontent.com/u/91370415?v=4?s=100" width="100px;" alt="Jamtoal"/><br /><sub><b>Jamtoal</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/issues?q=author%3AJamtoal" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
 </table>
