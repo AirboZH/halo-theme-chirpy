@@ -8,7 +8,7 @@
 <a href="https://github.com/AirboZH/halo-theme-chirpy/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/AirboZH/halo-theme-chirpy.svg?style=flat-square&include_prereleases" /></a>
 <a href="https://github.com/AirboZH/halo-theme-chirpy/commits"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/AirboZH/halo-theme-chirpy.svg?style=flat-square" /></a>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
   [**Live Demo 演示 →**][demo]
   
@@ -47,6 +47,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/GodlessLiu"><img src="https://avatars.githubusercontent.com/u/110895612?v=4?s=100" width="100px;" alt="Hilary Liu"/><br /><sub><b>Hilary Liu</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/commits?author=GodlessLiu" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://waite.wang"><img src="https://avatars.githubusercontent.com/u/75354124?v=4?s=100" width="100px;" alt="Waite Wang"/><br /><sub><b>Waite Wang</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/commits?author=waite0603" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://ll1025.cn"><img src="https://avatars.githubusercontent.com/u/62319007?v=4?s=100" width="100px;" alt="大葱"/><br /><sub><b>大葱</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/issues?q=author%3ADacong-wu" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://mareep.net"><img src="https://avatars.githubusercontent.com/u/62206240?v=4?s=100" width="100px;" alt="mareep"/><br /><sub><b>mareep</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/issues?q=author%3Avveg26" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
 </table>
