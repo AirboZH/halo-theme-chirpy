@@ -1,10 +1,6 @@
 export default {
   flipMode: () => {
-    if (
-      document
-        .querySelector('#comment div div')
-        .shadowRoot.querySelector('.halo-comment-widget').classList != null
-    ) {
+    if (document.querySelector('#comment div div')) {
       let commentDOMclass = document
         .querySelector('#comment div div')
         .shadowRoot.querySelector('.halo-comment-widget').classList;
