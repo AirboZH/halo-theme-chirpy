@@ -99,6 +99,17 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "halo-dev",
+      "name": "Halo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48195280?v=4",
+      "profile": "https://halo.run",
+      "contributions": [
+        "financial",
+        "plugin",
+        "mentoring"
+      ]
     }
   ],
   "contributorsPerLine": 7,
