@@ -110,6 +110,15 @@
         "plugin",
         "mentoring"
       ]
+    },
+    {
+      "login": "SinclairLin",
+      "name": "linzx",
+      "avatar_url": "https://avatars.githubusercontent.com/u/109134798?v=4",
+      "profile": "https://github.com/SinclairLin",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
