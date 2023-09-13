@@ -2,6 +2,10 @@ apiVersion: theme.halo.run/v1alpha1
 kind: Theme
 metadata:
   name: halo-theme-chirpy
+  annotations:
+    # Add supports for Halo App Store
+    # https://halo.run/store/apps/app-vGuQB
+    "store.halo.run/app-id": "app-vGuQB"
 spec:
   displayName: Chirpy
   author:
