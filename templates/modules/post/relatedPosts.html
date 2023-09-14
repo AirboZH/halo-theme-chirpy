@@ -18,7 +18,7 @@
                 th:text="${#dates.format(recommendPost.spec.publishTime,'MMM d, yyyy')}"></time>
               <h4 class="pt-0 my-2" th:text="${recommendPost.spec.title}"></h4>
               <div class="text-muted small">
-                <p th:text="${recommendPost.spec.excerpt.raw}"></p>
+                <p th:text="${recommendPost.status.excerpt}"></p>
               </div>
             </div>
           </a>
