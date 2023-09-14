@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<!-- 阅读建议 -->
 <th:block th:fragment="relatedPosts">
+  <!-- 阅读建议 -->
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4">Further Reading</h3>
-    <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4" th:with="posts = ${postFinder.listAll()}">
-      <article class="col" th:each="post : ${posts.subList(2,5)}">
-        <a th:href="@{${post.status.permalink}}" class="post-preview card h-100">
-          <div class="card-body">
-            <time class="small" th:text="${#dates.format(post.spec.publishTime,'MMM d, yyyy')}"></time>
-            <h4 class="pt-0 my-2">[[${post.spec.title}]]</h4>
-            <div class="text-muted small">
-              <p>[[${post.spec.excerpt.raw}]]</p>
+    <div th:if="${not #lists.isEmpty(post.categories)}">
+      <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4" 
+        th:each="recommendPosts : ${post.categories[0]}"
+        th:with="recommendPosts = ${postFinder.listByCategory(1, 10, recommendPosts.metadata.name)}">
+        <article class="col" 
+          th:each="recommendPost : ${recommendPosts.items}"
+          th:if="${post.metadata.name != recommendPost.metadata.name}">
+          <a th:href="@{${recommendPost.status.permalink}}" class="post-preview card h-100">
+            <div class="card-body">
+              <time class="small" style="color: #A4A4A4;"
+                th:text="${#dates.format(recommendPost.spec.publishTime,'MMM d, yyyy')}"></time>
+              <h4 class="pt-0 my-2" th:text="${recommendPost.spec.title}"></h4>
+              <div class="text-muted small">
+                <p th:text="${recommendPost.spec.excerpt.raw}"></p>
+              </div>
             </div>
-          </div>
-        </a>
-      </article>
-    </nav>
+          </a>
+        </article>
+      </nav>
+    </div>
   </aside>
 
   <!-- 文章上下页 -->
   <nav class="post-navigation d-flex justify-content-between pt-0" aria-label="Post Navigation"
     th:with="postCursor = ${postFinder.cursor(post.metadata.name)}">
     <a th:href="@{${postCursor.previous.status.permalink}}" class="btn btn-outline-primary">
-      <span style="color: #A4A4A4; font-size: 8px;">OLDER</span> <br />
-      <!-- <span th:text="${postCursor.previous.spec.title}"></span> -->
-      <p>[[${postCursor.previous.spec.title}]]</p>
+      <span style="color: #A4A4A4; font-size: 8px;">OLDER</span>
+      <p th:text="${postCursor.previous.spec.title}"></p>
     </a>
     <a th:href="@{${postCursor.next.status.permalink}}" class="btn btn-outline-primary">
       <span style="color: #A4A4A4; font-size: 8px;">NEWER</span>
-      <p>[[${postCursor.next.spec.title}]]</p>
+      <p th:text="${postCursor.next.spec.title}"></p>
     </a>
   </nav>
+
 </th:block>
 
 
