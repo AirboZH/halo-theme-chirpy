@@ -6,10 +6,9 @@
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4">Further Reading</h3>
     <div th:if="${not #lists.isEmpty(post.categories)}">
-      <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4" 
+      <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4"
         th:with="recommendPosts = ${postFinder.listByCategory(1, 3, post.categories[0].metadata.name)}">
-        <article class="col" 
-          th:each="recommendPost : ${recommendPosts.items}">
+        <article class="col" th:each="recommendPost : ${recommendPosts.items}">
           <a th:href="@{${recommendPost.status.permalink}}" class="post-preview card h-100">
             <div class="card-body">
               <time class="small" style="color: #A4A4A4;"
@@ -28,13 +27,17 @@
   <!-- 文章上下页 -->
   <nav class="post-navigation d-flex justify-content-between pt-0" aria-label="Post Navigation"
     th:with="postCursor = ${postFinder.cursor(post.metadata.name)}">
-    <a th:href="@{${postCursor.previous.status.permalink}}" class="btn btn-outline-primary">
+    <a class="btn btn-outline-primary" 
+      th:href="${postCursor.next.status.permalink == null ? '#' : postCursor.next.status.permalink}"
+      th:classappend="${postCursor.next.status.permalink == null} ? disabled">
       <span style="color: #A4A4A4; font-size: 8px;">OLDER</span>
-      <p th:text="${postCursor.previous.spec.title}"></p>
-    </a>
-    <a th:href="@{${postCursor.next.status.permalink}}" class="btn btn-outline-primary">
-      <span style="color: #A4A4A4; font-size: 8px;">NEWER</span>
       <p th:text="${postCursor.next.spec.title}"></p>
+    </a>
+    <a class="btn btn-outline-primary"
+      th:href="${postCursor.previous.status.permalink == null ? '#' : postCursor.previous.status.permalink}"
+      th:classappend="${postCursor.previous.status.permalink == null} ? disabled">
+      <span style="color: #A4A4A4; font-size: 8px;">NEWER</span>
+      <p th:text="${postCursor.previous.spec.title}"></p>
     </a>
   </nav>
 
