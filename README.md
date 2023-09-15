@@ -8,7 +8,7 @@
 <a href="https://github.com/AirboZH/halo-theme-chirpy/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/AirboZH/halo-theme-chirpy.svg?style=flat-square&include_prereleases" /></a>
 <a href="https://github.com/AirboZH/halo-theme-chirpy/commits"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/AirboZH/halo-theme-chirpy.svg?style=flat-square" /></a>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
   [**Live Demo 演示 →**][demo]
   
@@ -57,6 +57,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/wan92hen"><img src="https://avatars.githubusercontent.com/u/27671436?v=4?s=100" width="100px;" alt="BugKing"/><br /><sub><b>BugKing</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/issues?q=author%3Awan92hen" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://halo.run"><img src="https://avatars.githubusercontent.com/u/48195280?v=4?s=100" width="100px;" alt="Halo"/><br /><sub><b>Halo</b></sub></a><br /><a href="#financial-halo-dev" title="Financial">💵</a> <a href="#plugin-halo-dev" title="Plugin/utility libraries">🔌</a> <a href="#mentoring-halo-dev" title="Mentoring">🧑‍🏫</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/SinclairLin"><img src="https://avatars.githubusercontent.com/u/109134798?v=4?s=100" width="100px;" alt="linzx"/><br /><sub><b>linzx</b></sub></a><br /><a href="#ideas-SinclairLin" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/IObsession"><img src="https://avatars.githubusercontent.com/u/83881232?v=4?s=100" width="100px;" alt="IObsession"/><br /><sub><b>IObsession</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/issues?q=author%3AIObsession" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
 </table>
