@@ -7,11 +7,9 @@
     <h3 class="mb-4">Further Reading</h3>
     <div th:if="${not #lists.isEmpty(post.categories)}">
       <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4" 
-        th:each="recommendPosts : ${post.categories[0]}"
-        th:with="recommendPosts = ${postFinder.listByCategory(1, 10, recommendPosts.metadata.name)}">
+        th:with="recommendPosts = ${postFinder.listByCategory(1, 3, post.categories[0].metadata.name)}">
         <article class="col" 
-          th:each="recommendPost : ${recommendPosts.items}"
-          th:if="${post.metadata.name != recommendPost.metadata.name}">
+          th:each="recommendPost : ${recommendPosts.items}">
           <a th:href="@{${recommendPost.status.permalink}}" class="post-preview card h-100">
             <div class="card-body">
               <time class="small" style="color: #A4A4A4;"
