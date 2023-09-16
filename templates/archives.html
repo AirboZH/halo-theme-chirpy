@@ -11,7 +11,7 @@
         <th:block th:each="month : ${archive.months}">
           <li th:each="post : ${month.posts}">
             <span class="date day"
-              >[[${#dates.format(post.spec.publishTime,'d')}]]</span
+              >[[${#dates.format(post.spec.publishTime,'dd')}]]</span
             >
             <span class="date month small text-muted ms-1"
               >[[${#dates.format(post.spec.publishTime,'MM月')}]]</span
