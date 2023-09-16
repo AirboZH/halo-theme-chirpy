@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html
-  th:replace="~{modules/layout :: html (title =${post.spec.title} +' - '+ ${site.title},
+  th:replace="~{modules/layout :: html (title =${singlePage.spec.title} +' - '+ ${site.title},
   content = ~{modules/page :: page(~{::content}, 'page')})}"
   xmlns:th="https://www.thymeleaf.org"
 >
