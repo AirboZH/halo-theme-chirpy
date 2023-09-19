@@ -49,4 +49,38 @@ spec:
           label: 页脚版权协议
           value: "Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
           help: 页脚 "All rights reserved" 浮现时显示的版权协议
-        
+
+    - group: post
+      label: 文章
+      formSchema:
+        - $formkit: repeater
+          name: share
+          label: 分享设置
+          value:
+            - name: Telegram
+              icon: fa-fw fab fa-telegram
+              url: https://t.me/share/url?url=@URL
+            - name: Facebook
+              icon: fa-fw fab fa-facebook-square
+              url: https://www.facebook.com/sharer/sharer.php?u=@URL
+            - name: Twitter
+              icon: fa-fw fa-brands fa-square-x-twitter
+              url: https://twitter.com/intent/tweet?&url=@URL
+          max: 5
+          children:
+            - $formkit: text
+              name: name
+              label: 名称
+              value: ""
+              required: true
+            - $formkit: text
+              name: icon
+              label: 图标
+              value: ""
+              required: true
+            - $formkit: text
+              name: url
+              label: 链接
+              value: ""
+              required: true
+              
