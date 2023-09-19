@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
   <th:block th:fragment="postShaing" class="share-wrapper"
     th:with="siteUrl = ${#strings.substring(site.url, #strings.length(site.url) - 1)== '/'}? ${#strings.substring(site.url,0,#strings.length(site.url) - 1)}:${site.url}">
     <div class="share-wrapper"
@@ -9,35 +8,18 @@
         Share
       </span>
       <span class="share-icons">
-        <a
-          th:href="'https://t.me/share/url?url=' + ${postUrl}"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          title="Telegram"
-          target="_blank"
-          rel="noopener">
-          <i class="fa-fw fab fa-telegram"></i>
-        </a>
+        <span th:each="entry : ${theme.config.post.share}">
+          <a
+            th:href="${#strings.replace(entry.url, '@URL', postUrl)}"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            th:title="${entry.name}"
+            target="_blank"
+            rel="noopener">
+            <i th:class="${entry.icon}"></i>
+          </a>
+        </span>
 
-        <a
-          th:href="'https://www.facebook.com/sharer/sharer.php?u=' + ${postUrl}"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          title="Facebook"
-          target="_blank"
-          rel="noopener">
-          <i class="fa-fw fab fa-facebook-square"></i>
-        </a>
-
-        <a
-          href="https://www.linkedin.com/shareArticle?mini=true&url={{ post.url }}&title={{ post.title }}&summary={{ post.description }}&source={{ site.url }}"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          title="LinkedIn"
-          target="_blank"
-          rel="noopener">
-          <i class="fa-fw fab fa-linkedin"></i>
-        </a>
         <a href="javascript:void(0);"
           onclick="navigator.clipboard.writeText(window.location.href);">
           <i
