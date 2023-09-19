@@ -159,22 +159,7 @@
           </a>
           by the author.
         </div>
-
-        <div class="">
-          Share:
-          <button id="copy-link" 
-            aria-label="Copy link" 
-            class="btn small" 
-            onclick="
-              navigator.clipboard.writeText(window.location.href); 
-              this.innerHTML = 'Link copied successfully!'; 
-              setTimeout(function() { 
-                document.getElementById('copy-link').innerHTML = '<i class=&quot;fa-fw fas fa-link pe-none&quot;></i>'; 
-              }, 2000);
-            "> 
-            <i class="fa-fw fas fa-link pe-none"></i> 
-          </button>
-        </div>
+        <th:block th:replace="~{modules/post/postShaing :: postShaing} "></th:block>
       </div>
 
       <!-- further reading -->
