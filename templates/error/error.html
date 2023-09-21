@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{modules/layout :: html(title = ${error.status} + ': ' + ${#strings.defaultString(error.title, 'Internal server error')} + ' - ' +${site.title}, 
+  content = ~{::content}, layout = 'default' ,breadcrumb = ~{::breadcrumb})}"
+>
+  <th:block th:fragment="breadcrumb">
+    <span>
+      <a href="/">首页</a>
+    </span>
+    <span>[[${error.status} + ': ' + ${#strings.defaultString(error.title, 'Internal server error')}]]</span>
+  </th:block>
+  <th:block th:fragment="content">
+    <h1 data-toc-skip>
+      [[${error.status} + ': ' + ${#strings.defaultString(error.title, 'Internal
+      server error')}]]
+    </h1>
+
+    <div class="content">
+      <p class="lead">
+        Sorry, we have a slight error, please try again later.
+        <br />
+        Click <a href="/">here</a> to back home.
+      </p>
+    </div>
+  </th:block>
+</html>
