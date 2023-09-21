@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html
-  th:replace="~{modules/layout :: html (title = '标签 - ' + ${site.title},
-  content = ~{modules/page :: page(~{::content}, 'tags')})}"
+  th:replace="~{modules/layout :: html (title = '标签', content = ~{::content},
+   layout = 'tags' ,breadcrumb = ~{::breadcrumb})}"
   xmlns:th="https://www.thymeleaf.org"
 >
+  <th:block th:fragment="breadcrumb">
+    <span>
+      <a href="/">首页</a>
+    </span>
+    <span>标签</span>
+  </th:block>
+
   <div
     class="d-flex flex-wrap mx-xl-2"
     id="tags"
