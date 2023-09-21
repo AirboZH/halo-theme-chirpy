@@ -2,7 +2,7 @@
 <html
   xmlns:th="https://www.thymeleaf.org"
   th:replace="~{modules/layout :: html(title = ${error.status} + ': ' + ${#strings.defaultString(error.title, 'Internal server error')}, 
-  content = ~{::content}, layout = 'default' ,breadcrumb = ~{::breadcrumb})}"
+  content = ~{::content}, layout = 'error' ,breadcrumb = ~{::breadcrumb})}"
 >
   <th:block th:fragment="breadcrumb">
     <span>
