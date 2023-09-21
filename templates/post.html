@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html
-  th:replace="~{modules/layout :: html (title =${post.spec.title} +' - '+ ${site.title},
-  content = ~{modules/page :: page(~{::content}, 'post')})}"
+  th:replace="~{modules/layout :: html (title =${post.spec.title},
+  content = ~{::content}, layout = 'post', breadcrumb = ~{::breadcrumb})}"
   xmlns:th="https://www.thymeleaf.org"
 >
-  <th:block th:fragment="content">
-    <h1 data-toc-skip>[[${post.spec.title}]]</h1>
 
+<th:block th:fragment="breadcrumb">
+          <span>
+            <a href="/">首页</a>
+          </span>
+  <span>[[${title}]]</span>
+</th:block>
+</span>
+
+  <th:block th:fragment="content">
     <div class="post-meta text-muted">
       <!-- published date -->
       <span
@@ -112,7 +119,7 @@
     </div>
     <!-- .post-meta -->
 
-    <div class="post-content">
+    <div class="content">
       <th:block th:utext="${post.content.content}" />
     </div>
 
@@ -159,16 +166,20 @@
           </a>
           by the author.
         </div>
-        <th:block th:replace="~{modules/post/postShaing :: postShaing} "></th:block>
+        <th:block
+          th:replace="~{modules/post/postShaing :: postShaing} "
+        ></th:block>
       </div>
 
       <!-- further reading -->
       <div class="row">
         <div class="col-12 px-md-4">
-          <th:block th:replace="~{modules/post/relatedPosts :: relatedPosts}"></th:block>
+          <th:block
+            th:replace="~{modules/post/relatedPosts :: relatedPosts}"
+          ></th:block>
         </div>
       </div>
-      
+
       <!-- comments -->
       <div id="comment">
         <halo:comment

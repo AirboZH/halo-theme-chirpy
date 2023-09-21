@@ -4,10 +4,11 @@
 
   <div
     th:fragment="sidebar()"
+    aria-label="Sidebar"
     id="sidebar"
     class="d-flex flex-column align-items-end"
   >
-    <div class="profile-wrapper">
+    <header class="profile-wrapper">
       <a class="rounded-circle" href="/" id="avatar">
         <th:block th:if="${not #strings.isEmpty(site.logo)}">
           <img th:src="${site.logo}" width="112" height="112" alt="avatar" />
@@ -17,42 +18,43 @@
         </th:block>
       </a>
 
-      <div class="site-title">
+      <h1 class="site-title">
         <a href="/">[[${site.title}]]</a>
-      </div>
-      <div class="site-subtitle fst-italic">
+      </h1>
+      <p class="site-subtitle fst-italic">
         [[${#strings.isEmpty(site.subtitle)} ? 'A text-focused Halo theme' :
         ${site.subtitle}]]
-      </div>
-    </div>
+      </p>
+    </header>
     <!-- .profile-wrapper -->
 
-    <ul
+    <nav
       class="nav flex-column flex-grow-1 w-100 ps-0"
       th:with="menuItems = ${menuFinder.getPrimary().menuItems}"
     >
-      <!--   TODO For-->
-      <li class="nav-item" th:each="menuItem : ${menuItems}">
-        <a
-          class="nav-link"
-          th:href="@{${menuItem.status.href}}"
-          th:target="${menuItem.spec.target?.value}"
-          th:with="icon = ${#annotations.get(menuItem, 'icon')}"
-        >
-          <i
-            class="fa-fw fas fa-bars-staggered"
-            th:if="${#strings.isEmpty(icon)}"
-          ></i>
-          <i
-            th:class="${'fa-fw ' + icon}"
-            th:if="${not #strings.isEmpty(icon)}"
-          ></i>
-          <span>[[${menuItem.status.displayName}]]</span>
-        </a>
-      </li>
+      <ul class="nav">
+        <li th:class="nav-item" th:each="menuItem : ${menuItems}">
+          <a
+            class="nav-link"
+            th:href="@{${menuItem.status.href}}"
+            th:target="${menuItem.spec.target?.value}"
+            th:with="icon = ${#annotations.get(menuItem, 'icon')}"
+          >
+            <i
+              class="fa-fw fas fa-bars-staggered"
+              th:if="${#strings.isEmpty(icon)}"
+            ></i>
+            <i
+              th:class="${'fa-fw ' + icon}"
+              th:if="${not #strings.isEmpty(icon)}"
+            ></i>
+            <span>[[${menuItem.status.displayName}]]</span>
+          </a>
+        </li>
 
-      <!-- .nav-item -->
-    </ul>
+        <!-- .nav-item -->
+      </ul>
+    </nav>
     <!-- ul.nav.flex-column -->
 
     <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">

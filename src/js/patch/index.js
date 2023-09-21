@@ -1,9 +1,5 @@
-export function codeClass() {
-  document.addEventListener('DOMContentLoaded', function () {
-    const codeElements = document.querySelectorAll('p code');
+import { codeClass } from './codeClass';
 
-    codeElements.forEach(function (codeElement) {
-      codeElement.classList.add('language-plaintext', 'highlighter-rouge');
-    });
-  });
-}
+export const patch = {
+  codeClass: codeClass
+};

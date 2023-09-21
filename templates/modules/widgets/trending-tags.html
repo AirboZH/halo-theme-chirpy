@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
   <!--TODO {% if trending_tags.size > 0 %}-->
-  <div th:fragment="trendingTags()" id="access-tags">
-    <div class="panel-heading">Trending Tags</div>
+  <section th:fragment="trendingTags()">
+    <h2 class="panel-heading">Trending Tags</h2>
     <div
       th:with="tags = ${tagFinder.list(1,10)}"
       class="d-flex flex-wrap mt-3 mb-1 me-3"
@@ -15,5 +15,5 @@
         >
       </th:block>
     </div>
-  </div>
+  </section>
 </html>

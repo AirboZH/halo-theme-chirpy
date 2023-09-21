@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html
-  th:replace="~{modules/layout :: html (title =${singlePage.spec.title} +' - '+ ${site.title},
-  content = ~{modules/page :: page(~{::content}, 'page')})}"
+  th:replace="~{modules/layout :: html (title = ${singlePage.spec.title},
+  content = ~{::content}, layout = 'default' ,breadcrumb = ~{::breadcrumb})}"
   xmlns:th="https://www.thymeleaf.org"
 >
+  <th:block th:fragment="breadcrumb">
+    <span>
+      <a href="/">首页</a>
+    </span>
+    <span>[[${singlePage.spec.title}]]</span>
+  </th:block>
+
   <th:block th:fragment="content">
     <h1 data-toc-skip>[[${singlePage.spec.title}]]</h1>
     <div class="post-content">

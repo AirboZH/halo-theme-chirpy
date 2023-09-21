@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html
+  th:replace="~{modules/layout :: html (title = '', content = ~{::content},
+   layout = 'default', breadcrumb = ~{::breadcrumb})}"
   xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{modules/layout :: html (title = ${site.title},
-  content = ~{modules/page :: page(~{::content}, 'index')})}"
 >
+  <th:block th:fragment="breadcrumb">
+    <span>首页</span>
+  </th:block>
+
   <th:block th:fragment="content">
-    <div id="post-list">
-      <a
-        th:each="post : ${posts.items}"
-        th:href="@{${post.status.permalink}}"
-        class="card-wrapper"
-      >
-        <div class="card post-preview flex-md-row-reverse">
+    <div id="post-list" class="flex-grow-1 pe-xl-2">
+      <article th:each="post : ${posts.items}" class="card-wrapper">
+        <a
+          th:href="@{${post.status.permalink}}"
+          class="card post-preview flex-md-row-reverse"
+        >
           <div
             th:if="not ${#strings.isEmpty(post.spec.cover)}"
             class="preview-img"
@@ -26,7 +29,7 @@
           <div class="card-body d-flex flex-column">
             <h1 class="card-title my-2 mt-md-0">[[${post.spec.title}]]</h1>
 
-            <div class="card-text post-content mt-0 mb-2">
+            <div class="card-text content mt-0 mb-2">
               <p>[[${post.status.excerpt}]]</p>
             </div>
 
@@ -60,9 +63,10 @@
             <!-- .post-meta -->
           </div>
           <!-- .card-body -->
-        </div>
-      </a>
+        </a>
+      </article>
     </div>
+
     <th:block
       th:if="${posts.totalPages > 1}"
       th:replace="~{modules/widgets/post-paginator :: paginator('',${posts})}"

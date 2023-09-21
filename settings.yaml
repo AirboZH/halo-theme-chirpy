@@ -4,6 +4,34 @@ metadata:
   name: halo-theme-chirpy-setting
 spec:
   forms:
+    - group: basics
+      label: 全局设置
+      formSchema:
+        - $formkit: radio
+          name: enable_site_info
+          label: 站点信息开关
+          value: false
+          help: 右侧侧栏下方是否显示站点信息(halo中定义的页脚)
+          options:
+            - label: 开启
+              value: true
+            - label: 关闭
+              value: false
+        - $formkit: text
+          name: copyrightAgreement
+          label: 版权协议
+          value: "CC BY 4.0"
+        - $formkit: url
+          name: copyrightAgreementUrl
+          label: 版权协议地址
+          placeholder: 请输入版权协议地址
+          value: "https://creativecommons.org/licenses/by/4.0/"
+        - $formkit: text
+          name: footerCopyrightAgreement
+          label: 页脚版权协议
+          value: "Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
+          help: 页脚 "All rights reserved" 浮现时显示的版权协议
+
     - group: sidebar
       label: 侧栏
       formSchema:
@@ -31,24 +59,6 @@ spec:
               label: 链接
               value: ""
               required: true
-
-    - group: basics
-      label: 全局设置
-      formSchema:
-        - $formkit: text
-          name: copyrightAgreement
-          label: 版权协议
-          value: "CC BY 4.0"
-        - $formkit: url
-          name: copyrightAgreementUrl
-          label: 版权协议地址
-          placeholder: 请输入版权协议地址
-          value: "https://creativecommons.org/licenses/by/4.0/"
-        - $formkit: text
-          name: footerCopyrightAgreement
-          label: 页脚版权协议
-          value: "Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
-          help: 页脚 "All rights reserved" 浮现时显示的版权协议
 
     - group: post
       label: 文章

@@ -22,7 +22,11 @@
       name="viewport"
     />
 
-    <title th:text="${title}"></title>
+    <title th:if="${#strings.isEmpty(title)}" th:text="${site.title}"></title>
+    <title
+      th:if="${!#strings.isEmpty(title)}"
+      th:text="${title}+' - '+ ${site.title}"
+    ></title>
 
     <link rel="manifest" th:href="@{/assets/dist/manifest.json}" />
     <link

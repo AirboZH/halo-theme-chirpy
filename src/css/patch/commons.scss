@@ -11,3 +11,29 @@
     }
   }
 }
+.access-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4rem;
+}
+.access-links {
+  padding-left: 1rem;
+  border-left: 1px solid var(--main-border-color);
+
+  ul {
+    padding-left: 0;
+
+    li {
+      margin-bottom: 8px;
+      list-style: none;
+
+      a {
+        color: inherit;
+      }
+
+      a:hover {
+        @extend %link-hover;
+      }
+    }
+  }
+}

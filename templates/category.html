@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html
-  th:replace="~{modules/layout :: html (title = '分类：'+ ${category.spec.displayName} +' - ' + ${site.title},
-  content = ~{modules/page :: page(~{::content}, 'category')})}"
+  th:replace="~{modules/layout :: html (title = '分类：'+ ${category.spec.displayName},
+  content = ~{::content}, layout = 'category' ,breadcrumb = ~{::breadcrumb})}"
   xmlns:th="https://www.thymeleaf.org"
 >
+  <th:block th:fragment="breadcrumb">
+    <span>
+      <a href="/">首页</a>
+    </span>
+    <span>
+      <a href="/categories">分类</a>
+    </span>
+    <span>[[${category.spec.displayName}]]</span>
+  </th:block>
+
   <div id="page-category" th:fragment="content">
     <h1 class="ps-lg-2">
       <i class="far fa-folder-open fa-fw text-muted"></i>
@@ -12,7 +22,7 @@
     </h1>
 
     <ul
-      class="post-content ps-0"
+      class="content ps-0"
       th:with="posts = ${postFinder.listByCategory(1,-1,category.metadata.name)}"
     >
       <li

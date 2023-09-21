@@ -1,9 +1,19 @@
 <!DOCTYPE html>
 <html
-  th:replace="~{modules/layout :: html (title = '标签：'+ ${tag.spec.displayName} +' - ' + ${site.title},
-  content = ~{modules/page :: page(~{::content}, 'tag')})}"
+  th:replace="~{modules/layout :: html (title = '标签：'+ ${tag.spec.displayName},
+  content =~{::content}, layout = 'tag', breadcrumb = ~{::breadcrumb})}"
   xmlns:th="https://www.thymeleaf.org"
 >
+  <th:block th:fragment="breadcrumb">
+    <span>
+      <a href="/">首页</a>
+    </span>
+    <span>
+      <a href="/tags">标签</a>
+    </span>
+    <span>[[${tag.spec.displayName}]]</span>
+  </th:block>
+
   <div id="page-tag" th:fragment="content">
     <h1 class="ps-lg-2">
       <i class="fa fa-tag fa-fw text-muted"></i>
