@@ -1,3 +1,5 @@
+import tocbot from "tocbot";
+
 export function toc() {
   if (document.querySelector('.content h2')) {
     // see: https://github.com/tscanlin/tocbot#usage
