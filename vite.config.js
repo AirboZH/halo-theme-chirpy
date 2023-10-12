@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite';
-import { fileURLToPath } from 'url';
+import {defineConfig} from 'vite';
+import {fileURLToPath} from 'url';
 import inject from '@rollup/plugin-inject';
 
 import path from 'path';
@@ -23,7 +23,7 @@ export default defineConfig({
           bootstrap: ['bootstrap'],
           jquery: ['jquery'],
           magnific_popup: ['magnific-popup'],
-          tocbot: ['tocbot']
+          tocbot: ['tocbot'],
         }
       }
     },

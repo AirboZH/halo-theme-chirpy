@@ -4,9 +4,20 @@ import 'magnific-popup';
 import 'tocbot';
 
 import './css/style.scss';
-import './js/categories';
-import './js/commons';
-import './js/home';
-import './js/misc';
-import './js/page';
-import './js/post';
+
+import {basic} from "./js/modules/layouts/basic";
+import {initSidebar} from "./js/modules/layouts/sidebar";
+import {initTopbar} from "./js/modules/layouts/topbar";
+import {categoryCollapse} from "./js/modules/components/category-collapse";
+import {imgLazy} from "./js/modules/components/img-lazyload";
+import {toc} from "./js/modules/components/toc";
+import {initClipboard} from "./js/modules/plugins";
+
+basic();
+initSidebar();
+initTopbar();
+categoryCollapse();
+imgLazy();
+// imgPopup();
+initClipboard();
+toc();
