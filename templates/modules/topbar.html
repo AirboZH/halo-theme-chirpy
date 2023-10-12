@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
 <!-- The Top Bar -->
-<header id="topbar-wrapper" th:fragment="topbar(content)">
+<header id="topbar-wrapper" th:fragment="topbar(content, title)">
 	<div
 		id="topbar"
 		class="d-flex align-items-center justify-content-between px-lg-3 h-100"
@@ -14,17 +14,14 @@
 			<i class="fas fa-bars fa-fw"></i>
 		</button>
 
-		<div id="topbar-title">
-			<!--      {% if page.layout == 'home' %}-->
-			<!--      {{- site.data.locales[include.lang].title | default: site.title -}}-->
-			<!--      {% elsif page.collection == 'tabs' or page.layout == 'page' %}-->
-			<!--      {%- capture tab_key -%}{{ page.url | split: '/' }}{%- endcapture -%}-->
-			<!--      {{- site.data.locales[include.lang].tabs[tab_key] | default: page.title -}}-->
-			<!--      {% else %}-->
-			<!--      {{- site.data.locales[include.lang].layout[page.layout] | default: page.layout | capitalize -}}-->
-			<!--      {% endif %}-->
-		</div>
+    <div id="topbar-title">[[${title}]]</div>
 		<!--     .display none-->
+
+    <th:block th:if="${!pluginFinder.available('PluginSearchWidget')}">
+      <button type="button" onclick="alert('请安装搜索插件')" class="btn btn-link">
+        <i class="fas fa-search fa-fw"></i>
+      </button>
+    </th:block>
 
 		<th:block th:if="${pluginFinder.available('PluginSearchWidget')}">
 			<button type="button" id="search-trigger" class="btn btn-link">

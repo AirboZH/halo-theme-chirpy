@@ -12,20 +12,20 @@ dependencies:
     specifier: ^2.11.8
     version: 2.11.8
   bootstrap:
-    specifier: ^5.2.3
-    version: 5.2.3(@popperjs/core@2.11.8)
+    specifier: ^5.3.2
+    version: 5.3.2(@popperjs/core@2.11.8)
   glob:
     specifier: ^10.3.3
     version: 10.3.3
   jquery:
-    specifier: ^3.7.0
-    version: 3.7.0
+    specifier: ^3.7.1
+    version: 3.7.1
   magnific-popup:
     specifier: ^1.1.0
     version: 1.1.0
   tocbot:
-    specifier: ^4.21.1
-    version: 4.21.1
+    specifier: ^4.21.2
+    version: 4.21.2
 
 devDependencies:
   '@rollup/plugin-inject':
@@ -548,10 +548,10 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /bootstrap@5.2.3(@popperjs/core@2.11.8):
-    resolution: {integrity: sha512-cEKPM+fwb3cT8NzQZYEu4HilJ3anCrWqh3CHAok1p9jXqMPsPTBhU25fBckEJHJ/p+tTxTFTsFQGM+gaHpi3QQ==}
+  /bootstrap@5.3.2(@popperjs/core@2.11.8):
+    resolution: { integrity: sha512-D32nmNWiQHo94BKHLmOrdjlL05q1c8oxbtBphQFb9Z5to6eGRDCm0QgeaZ4zFBHzfg2++rqa2JkqCcxDy0sH0g== }
     peerDependencies:
-      '@popperjs/core': ^2.11.6
+      '@popperjs/core': ^2.11.8
     dependencies:
       '@popperjs/core': 2.11.8
     dev: false
@@ -1264,8 +1264,8 @@ packages:
       '@pkgjs/parseargs': 0.11.0
     dev: false
 
-  /jquery@3.7.0:
-    resolution: {integrity: sha512-umpJ0/k8X0MvD1ds0P9SfowREz2LenHsQaxSohMZ5OMNEU2r0tf8pdeEFTHMFxWVxKNyU9rTtK3CWzUCTKJUeQ==}
+  /jquery@3.7.1:
+    resolution: { integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg== }
     dev: false
 
   /js-sdsl@4.4.1:
@@ -2059,8 +2059,8 @@ packages:
       is-number: 7.0.0
     dev: true
 
-  /tocbot@4.21.1:
-    resolution: {integrity: sha512-IfajhBTeg0HlMXu1f+VMbPef05QpDTsZ9X2Yn1+8npdaXsXg/+wrm9Ze1WG5OS1UDC3qJ5EQN/XOZ3gfXjPFCw==}
+  /tocbot@4.21.2:
+    resolution: { integrity: sha512-R5Muhi/TUu4i4snWVrMgNoXyJm2f8sJfdgIkQvqb+cuIXQEIMAiWGWgCgYXHqX4+XiS/Bnm7IYZ9Zy6NVe6lhw== }
     dev: false
 
   /trim-newlines@3.0.1:
