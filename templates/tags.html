@@ -11,17 +11,21 @@
     <span>标签</span>
   </th:block>
 
-  <div
-    class="d-flex flex-wrap mx-xl-2"
-    id="tags"
-    th:fragment="content"
-    th:with="tags = ${tagFinder.listAll()}"
-  >
-    <div th:each="tag : ${tags}">
-      <a class="tag" th:href="${tag.status.permalink}">
-        [[${tag.spec.displayName}]]
-        <span class="text-muted">[[${tag.status.visiblePostCount}]]</span>
-      </a>
+  <th:block th:fragment="content">
+    <h1 class="dynamic-title">标签</h1>
+    <div class="content">
+      <div
+        class="d-flex flex-wrap mx-xl-2"
+        id="tags"
+        th:with="tags = ${tagFinder.listAll()}"
+      >
+        <div th:each="tag : ${tags}">
+          <a class="tag" th:href="${tag.status.permalink}">
+            [[${tag.spec.displayName}]]
+            <span class="text-muted">[[${tag.status.visiblePostCount}]]</span>
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
+  </th:block>
 </html>
