@@ -4,56 +4,100 @@
   lang="en"
   th:fragment="html (title,content,layout,breadcrumb)"
 >
-  <th:block th:replace="~{modules/head :: head(${title})}" />
+<th:block th:replace="~{modules/head :: head(${title})}"/>
 
-  <body>
-    <th:block th:replace="~{modules/sidebar :: sidebar()}" />
-    <div id="main-wrapper" class="d-flex justify-content-center">
-      <div class="container d-flex flex-column px-xxl-5">
-        <th:block th:replace="~{modules/topbar :: topbar(${breadcrumb}, ${layout})}"/>
-        <div class="row flex-grow-1">
-          <main
-            aria-label="Main Content"
-            class="col-12 col-lg-11 col-xl-9 px-md-4 pb-5"
-            th:switch="${layout}"
-          >
-            <th:block th:case="default">
-              <th:block th:replace="${content}" />
-            </th:block>
-            <th:block th:case="*">
-              <article class="px-1">
-                <th:block th:replace="${content}" />
-              </article>
-            </th:block>
-          </main>
+<body>
+<th:block th:replace="~{modules/sidebar :: sidebar()}"/>
+<div id="main-wrapper" class="d-flex justify-content-center">
+  <div class="container d-flex flex-column px-xxl-5">
+    <th:block th:switch="${layout}">
+      <th:block th:case="Default">
+        <th:block
+          th:replace="~{modules/topbar :: topbar(${breadcrumb}, ${site.title})}"
+        />
+      </th:block>
+      <th:block th:case="Tag">
+        <th:block
+          th:replace="~{modules/topbar :: topbar(${breadcrumb}, 标签)}"
+        />
+      </th:block>
+      <th:block th:case="Tags">
+        <th:block
+          th:replace="~{modules/topbar :: topbar(${breadcrumb}, 标签)}"
+        />
+      </th:block>
+      <th:block th:case="Category">
+        <th:block
+          th:replace="~{modules/topbar :: topbar(${breadcrumb}, 分类)}"
+        />
+      </th:block>
+      <th:block th:case="Categories">
+        <th:block
+          th:replace="~{modules/topbar :: topbar(${breadcrumb}, 分类)}"
+        />
+      </th:block>
+      <th:block th:case="Archives">
+        <th:block
+          th:replace="~{modules/topbar :: topbar(${breadcrumb}, 归档)}"
+        />
+      </th:block>
+      <th:block th:case="Post">
+        <th:block
+          th:replace="~{modules/topbar :: topbar(${breadcrumb}, 文章)}"
+        />
+      </th:block>
+      <th:block th:case="*">
+        <th:block
+          th:replace="~{modules/topbar :: topbar(${breadcrumb}, ' ')}"
+        />
+      </th:block>
+    </th:block>
+    <div class="row flex-grow-1">
+      <main
+        aria-label="Main Content"
+        class="col-12 col-lg-11 col-xl-9 px-md-4 pb-5"
+        th:switch="${layout}"
+      >
+        <th:block th:case="Default">
+          <th:block th:replace="${content}"/>
+        </th:block>
+        <th:block th:case="Page">
+          <th:block th:replace="${content}"/>
+        </th:block>
+        <th:block th:case="*">
+          <article class="px-1">
+            <th:block th:replace="${content}"/>
+          </article>
+        </th:block>
+      </main>
 
-          <!-- panel -->
-          <aside
-            aria-label="Panel"
-            id="panel-wrapper"
-            class="col-xl-3 ps-2 text-muted"
-          >
-            <th:block th:replace="~{modules/panel :: panel(${layout})}" />
-          </aside>
-        </div>
-        <div class="row">
-          <!-- tail -->
-          <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
-            <th:block th:replace="~{modules/footer :: footer()}" />
-          </div>
-        </div>
-      </div>
-
-      <aside aria-label="Scroll to Top">
-        <button
-          id="back-to-top"
-          type="button"
-          class="btn btn-lg btn-box-shadow"
-        >
-          <i class="fas fa-angle-up"></i>
-        </button>
+      <!-- panel -->
+      <aside
+        aria-label="Panel"
+        id="panel-wrapper"
+        class="col-xl-3 ps-2 text-muted"
+      >
+        <th:block th:replace="~{modules/panel :: panel(${layout})}"/>
       </aside>
     </div>
-    <div id="mask"></div>
-  </body>
+    <div class="row">
+      <!-- tail -->
+      <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+        <th:block th:replace="~{modules/footer :: footer()}"/>
+      </div>
+    </div>
+  </div>
+
+  <aside aria-label="Scroll to Top">
+    <button
+      id="back-to-top"
+      type="button"
+      class="btn btn-lg btn-box-shadow"
+    >
+      <i class="fas fa-angle-up"></i>
+    </button>
+  </aside>
+</div>
+<div id="mask"></div>
+</body>
 </html>

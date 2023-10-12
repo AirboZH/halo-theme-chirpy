@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
   th:replace="~{modules/layout :: html (title =${post.spec.title},
-  content = ~{::content}, layout = 'post', breadcrumb = ~{::breadcrumb})}"
+  content = ~{::content}, layout = 'Post', breadcrumb = ~{::breadcrumb})}"
   xmlns:th="https://www.thymeleaf.org"
 >
 <th:block th:fragment="breadcrumb">
