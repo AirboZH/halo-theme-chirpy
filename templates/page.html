@@ -21,7 +21,7 @@
         group="content.halo.run"
         kind="Post"
         th:attr="name=${singlePage.metadata.name}"
-        colorScheme="document.documentElement.getAttribute('data-mode') === 'light' ? 'light' : 'dark'"
+        colorScheme="window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'"
       />
     </div>
   </th:block>

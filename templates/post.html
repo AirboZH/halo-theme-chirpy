@@ -186,7 +186,7 @@
           group="content.halo.run"
           kind="Post"
           th:attr="name=${post.metadata.name}"
-          colorScheme="document.documentElement.getAttribute('data-mode') === 'dark' ? 'dark' : 'light'"
+          colorScheme="window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'"
         />
       </div>
       <!-- .post-tail-bottom -->
