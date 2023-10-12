@@ -11,37 +11,37 @@
 <div id="main-wrapper" class="d-flex justify-content-center">
   <div class="container d-flex flex-column px-xxl-5">
     <th:block th:switch="${layout}">
-      <th:block th:case="Default">
+      <th:block th:case="default">
         <th:block
           th:replace="~{modules/topbar :: topbar(${breadcrumb}, ${site.title})}"
         />
       </th:block>
-      <th:block th:case="Tag">
+      <th:block th:case="tag">
         <th:block
           th:replace="~{modules/topbar :: topbar(${breadcrumb}, 标签)}"
         />
       </th:block>
-      <th:block th:case="Tags">
+      <th:block th:case="tags">
         <th:block
           th:replace="~{modules/topbar :: topbar(${breadcrumb}, 标签)}"
         />
       </th:block>
-      <th:block th:case="Category">
+      <th:block th:case="category">
         <th:block
           th:replace="~{modules/topbar :: topbar(${breadcrumb}, 分类)}"
         />
       </th:block>
-      <th:block th:case="Categories">
+      <th:block th:case="categories">
         <th:block
           th:replace="~{modules/topbar :: topbar(${breadcrumb}, 分类)}"
         />
       </th:block>
-      <th:block th:case="Archives">
+      <th:block th:case="archives">
         <th:block
           th:replace="~{modules/topbar :: topbar(${breadcrumb}, 归档)}"
         />
       </th:block>
-      <th:block th:case="Post">
+      <th:block th:case="post">
         <th:block
           th:replace="~{modules/topbar :: topbar(${breadcrumb}, 文章)}"
         />
