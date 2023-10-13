@@ -10,9 +10,10 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-  [**Live Demo 演示 →**][demo]
+
   
-  ![Demo Pic](https://cdn.airbozh.cn/blog/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20230715011526.jpg)
+  ![Demo Pic](https://cdn.airbozh.cn/blog/97shots_so.png)
+  [**Live Demo 演示 →**][demo]
 
 </div>
 
