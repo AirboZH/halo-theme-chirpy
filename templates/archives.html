@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html
   th:replace="~{modules/layout :: html (title = '归档', content = ~{::content},
-   layout = 'Archives', breadcrumb = ~{::breadcrumb})}"
+   layout = 'archives', breadcrumb = ~{::breadcrumb})}"
   xmlns:th="https://www.thymeleaf.org"
 >
   <th:block th:fragment="breadcrumb">
     <span>
-      <a href="/">首页</a>
+      <a href="/">[[#{breadcrumb.home}]]</a>
     </span>
-    <span>归档</span>
+    <span>[[#{breadcrumb.archive}]]</span>
   </th:block>
   <div class="pl-xl-3" id="archives" th:fragment="content">
     <th:block th:each="archive : ${postFinder.archives(1,-1).items}">

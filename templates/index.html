@@ -5,7 +5,7 @@
   xmlns:th="https://www.thymeleaf.org"
 >
   <th:block th:fragment="breadcrumb">
-    <span>首页</span>
+    <span>[[#{breadcrumb.home}]]</span>
   </th:block>
 
   <th:block th:fragment="content">
@@ -43,10 +43,12 @@
                 <em class th:if="${days > 30}"
                   >[[${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}]]</em
                 >
-                <em class th:if="${days <= 30 && days > 0}"
-                  >[[${days}+天前]]</em
+                <em class th:if="${days <= 30 && days > 1}"
+                >[[${days}+#{date.days_ago}]]</em
                 >
-                <em class th:if="${days == 0}">最近</em>
+                <em class th:if="${days == 1}">[[#{date.yesterday}]]</em
+                >
+                <em class th:if="${days == 0}">[[#{date.recently}]]</em>
 
                 <!-- categories -->
                 <i class="far fa-folder-open fa-fw me-1"></i>

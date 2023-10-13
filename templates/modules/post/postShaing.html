@@ -9,7 +9,7 @@
       class="share-wrapper"
       th:with="postUrl = ${siteUrl}+${post.status.permalink}"
     >
-      <span class="share-label text-muted me-1"> Share </span>
+      <span class="share-label text-muted me-1">[[#{post_sharing.share}]]</span>
       <span class="share-icons">
         <span th:each="entry : ${theme.config.post.share}">
           <a
