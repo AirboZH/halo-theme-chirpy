@@ -18,7 +18,7 @@
 		<!--     .display none-->
 
     <th:block th:if="${!pluginFinder.available('PluginSearchWidget')}">
-      <button type="button" onclick="alert('请安装搜索插件')" class="btn btn-link">
+			<button type="button" th:onclick="alert(#{top_bar.need_search_plugin})" class="btn btn-link">
         <i class="fas fa-search fa-fw"></i>
       </button>
     </th:block>
@@ -29,19 +29,19 @@
 			</button>
 			<search class="align-items-center ms-3 ms-lg-0">
 				<i class="fas fa-search fa-fw"></i>
-				<a href="javascript:SearchWidget.open()" title="搜索">
+				<a href="javascript:SearchWidget.open()" th:title="#{top_bar.search}">
 					<input
 						class="form-control"
 						id="search-input"
 						type="search"
 						aria-label="search"
 						autocomplete="off"
-						placeholder="搜索"
+						th:placeholder="#{top_bar.search}"
 					>
 				</a>
 			</search>
 			<button type="button" class="btn btn-link text-decoration-none" id="search-cancel">
-				取消
+				[[#{cancel}]]
 			</button>
 		</th:block>
 	</div>

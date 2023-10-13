@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html
-  th:replace="~{modules/layout :: html (title = '分类：'+ ${category.spec.displayName},
+  th:replace="~{modules/layout :: html (title = #{breadcrumb.categories} +': '+ ${category.spec.displayName},
   content = ~{::content}, layout = 'category' ,breadcrumb = ~{::breadcrumb})}"
   xmlns:th="https://www.thymeleaf.org"
 >
   <th:block th:fragment="breadcrumb">
     <span>
-      <a href="/">首页</a>
+      <a href="/">[[#{breadcrumb.home}]]</a>
     </span>
     <span>
-      <a href="/categories">分类</a>
+      <a href="/categories">[[#{breadcrumb.categories}]]</a>
     </span>
     <span>[[${category.spec.displayName}]]</span>
   </th:block>

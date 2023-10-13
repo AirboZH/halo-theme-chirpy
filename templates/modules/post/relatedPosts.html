@@ -3,7 +3,7 @@
   <th:block th:fragment="relatedPosts">
     <!-- 阅读建议 -->
     <aside id="related-posts" aria-labelledby="related-label">
-      <h3 class="mb-4">Further Reading</h3>
+      <h3 class="mb-4">[[#{related_posts.further_reading}]]</h3>
       <div th:if="${not #lists.isEmpty(post.categories)}">
         <nav
           class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4"
@@ -48,7 +48,7 @@
         th:href="${postCursor.next.status.permalink == null ? '#' : postCursor.next.status.permalink}"
         th:classappend="${postCursor.next.status.permalink == null} ? disabled"
       >
-        <span style="color: #a4a4a4; font-size: 8px">OLDER</span>
+        <span style="color: #a4a4a4; font-size: 8px">[[#{related_posts.older}]]</span>
         <p th:text="${postCursor.next.spec.title}"></p>
       </a>
       <a
@@ -56,7 +56,7 @@
         th:href="${postCursor.previous.status.permalink == null ? '#' : postCursor.previous.status.permalink}"
         th:classappend="${postCursor.previous.status.permalink == null} ? disabled"
       >
-        <span style="color: #a4a4a4; font-size: 8px">NEWER</span>
+        <span style="color: #a4a4a4; font-size: 8px">[[#{related_posts.newer}]]</span>
         <p th:text="${postCursor.previous.spec.title}"></p>
       </a>
     </nav>

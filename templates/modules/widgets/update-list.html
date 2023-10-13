@@ -2,7 +2,7 @@
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
   <!--TODO {% if update_list.size > 0 %}-->
   <section th:fragment="updateList()" id="access-lastmod" class="post">
-    <h2 class="panel-heading">Recently Updated</h2>
+    <h2 class="panel-heading">[[#{panel.recently_updated}]]</h2>
     <ul
       th:with="posts = ${postFinder.list(1,5)}"
       class="post-content list-unstyled ps-0 pb-1 ms-1 mt-2"

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html
-  th:replace="~{modules/layout :: html (title = '标签：'+ ${tag.spec.displayName},
+  th:replace="~{modules/layout :: html (title = #{breadcrumb.tags} + ': ' + ${tag.spec.displayName},
   content =~{::content}, layout = 'tag', breadcrumb = ~{::breadcrumb})}"
   xmlns:th="https://www.thymeleaf.org"
 >
   <th:block th:fragment="breadcrumb">
     <span>
-      <a href="/">首页</a>
+      <a href="/">[[#{breadcrumb.home}]]</a>
     </span>
     <span>
-      <a href="/tags">标签</a>
+      <a href="/tags">[[#{breadcrumb.tags}]]</a>
     </span>
     <span>[[${tag.spec.displayName}]]</span>
   </th:block>
@@ -33,7 +33,7 @@
         <a th:href="${post.status.permalink}">[[${post.spec.title}]]</a>
         <span class="dash flex-grow-1"></span>
         <span class="text-muted small"
-          >[[${#dates.format(post.spec.publishTime,'yyyy年MM月d日')}]]</span
+        >[[${#dates.format(post.spec.publishTime,'yyyy-MM-d')}]]</span
         >
       </li>
     </ul>

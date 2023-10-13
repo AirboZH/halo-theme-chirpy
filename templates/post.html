@@ -6,9 +6,9 @@
 >
 <th:block th:fragment="breadcrumb">
     <span>
-      <a href="/">首页</a>
+      <a href="/">[[#{breadcrumb.home}]]</a>
     </span>
-  <span>[[${title}]]</span>
+  <span>[[${post.spec.title}]]</span>
 </th:block>
 
 <th:block th:fragment="content">
@@ -21,65 +21,88 @@
         th:with="days=${(new java.util.Date().getTime()-post.spec.publishTime.toEpochMilli())/86400000}"
       >
           Posted
+      <div class="post-meta text-muted">
+        <!-- published date -->
+        <span
+          th:with="days=${(new java.util.Date().getTime()-post.spec.publishTime.toEpochMilli())/86400000}"
+        >
+          [[#{post.posted}]]
           <em
             class
             data-bs-placement="bottom"
             data-bs-toggle="tooltip"
-            th:data-bs-title="${#dates.format(post.spec.publishTime,'yyyy年 MM月 d日  E  h:mm a')}"
+            th:data-bs-title="${#dates.format(post.spec.publishTime,'yyyy-MM-d  E  h:mm a')}"
             th:if="${days > 30}"
-          >[[${#dates.format(post.spec.publishTime,'yyyy年 MM月 d日')}]]</em
+          >[[${#dates.format(post.spec.publishTime,'yyyy-MM-d')}]]</em
           >
           <em
             class
             data-bs-placement="bottom"
             data-bs-toggle="tooltip"
-            th:data-bs-title="${#dates.format(post.spec.publishTime,'yyyy年 MM月 d日  E  h:mm a')}"
-            th:if="${days <= 30 && days > 0}"
+            th:data-bs-title="${#dates.format(post.spec.publishTime,'yyyy-MM-d  E  h:mm a')}"
+            th:if="${days <= 30 && days > 1}"
           >
-            [[${days}+天前]]
+            [[${days}+#{date.days_ago}]]
           </em>
           <em
             class
             data-bs-placement="bottom"
             data-bs-toggle="tooltip"
-            th:data-bs-title="${#dates.format(post.spec.publishTime,'yyyy年 MM月 d日  E  h:mm a')}"
+            th:data-bs-title="${#dates.format(post.spec.publishTime,'yyyy-MM-d  E  h:mm a')}"
+            th:if="${days == 1}"
+          >
+            [[#{date.yesterday}]]
+          </em>
+          <em
+            class
+            data-bs-placement="bottom"
+            data-bs-toggle="tooltip"
+            th:data-bs-title="${#dates.format(post.spec.publishTime,'yyyy-MM-d  E  h:mm a')}"
             th:if="${days == 0}"
           >
-            最近
+            [[#{date.recently}]]
           </em>
         </span>
 
-      <!-- lastmod date -->
-      <!--TODO publish time != update time-->
+        <!-- lastmod date -->
+        <!--TODO publish time != update time-->
       <span
         th:with="days=${(new java.util.Date().getTime()-post.status.lastModifyTime.toEpochMilli())/86400000}"
       >
-          Updated
+          [[#{post.updated}]]
           <em
             class
             data-bs-placement="bottom"
             data-bs-toggle="tooltip"
-            th:data-bs-title="${#dates.format(post.status.lastModifyTime,'yyyy年 MM月 d日  E  h:mm a')}"
+            th:data-bs-title="${#dates.format(post.status.lastModifyTime,'yyyy-MM-d  E  h:mm a')}"
             th:if="${days > 30}"
-          >[[${#dates.format(post.status.lastModifyTime,'yyyy年 MM月
-            d日')}]]</em
+          >[[${#dates.format(post.status.lastModifyTime,'yyyy-MM-
+            d')}]]</em
           >
           <em
             class
             data-bs-placement="bottom"
             data-bs-toggle="tooltip"
-            th:data-bs-title="${#dates.format(post.status.lastModifyTime,'yyyy年 MM月 d日  E  h:mm a')}"
-            th:if="${days <= 30 && days > 0}"
+            th:data-bs-title="${#dates.format(post.status.lastModifyTime,'yyyy-MM-d  E  h:mm a')}"
+            th:if="${days <= 30 && days > 1}"
           >
-            [[${days}+天前]]</em
+            [[${days}+#{date.days_ago}]]</em
           >
           <em
             class
             data-bs-placement="bottom"
             data-bs-toggle="tooltip"
-            th:data-bs-title="${#dates.format(post.status.lastModifyTime,'yyyy年 MM月 d日  E  h:mm a')}"
+            th:data-bs-title="${#dates.format(post.status.lastModifyTime,'yyyy-MM-d  E  h:mm a')}"
+            th:if="${days == 1}"
+          > [[#{date.yesterday}]]</em
+          >
+          <em
+            class
+            data-bs-placement="bottom"
+            data-bs-toggle="tooltip"
+            th:data-bs-title="${#dates.format(post.status.lastModifyTime,'yyyy-MM-d  E  h:mm a')}"
             th:if="${days == 0}"
-          >最近</em
+          > [[#{date.recently}]]</em
           >
         </span>
 
@@ -97,7 +120,7 @@
       <div class="d-flex justify-content-between">
         <!-- author(s) -->
         <span>
-            By
+            [[#{post.by}]]
             <em th:each="contributor : ${post.contributors}">
               [[${contributor.displayName}]]
             </em>
@@ -107,18 +130,18 @@
           <!-- read time -->
           <span
             class="readtime"
-            th:data-bs-original-title="${wordsCount}+' words'"
+            th:data-bs-original-title="${wordsCount}+' '+#{words_count.words}"
             data-bs-placement="bottom"
             data-bs-toggle="tooltip"
           >
-              <em>[[${wordsCount/450 + "~" + wordsCount/350}]] min</em>
-              read
+              <em>[[${wordsCount/450 + "~" + wordsCount/350 + " "}]][[ #{words_count.min}]]</em>
+              [[#{words_count.read}]]
             </span>
         </div>
       </div>
-      <!-- .d-flex -->
+        <!-- .d-flex -->
     </div>
-    <!-- .post-meta -->
+        <!-- .post-meta -->
   </header>
 
   <div class="content">
@@ -162,11 +185,10 @@
       class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"
     >
       <div class="license-wrapper">
-        This post is licensed under
+        [[#{post.license}]]:&nbsp;
         <a id="myLink" th:href="${theme.config.basics.copyrightAgreementUrl}">
           [[${theme.config.basics.copyrightAgreement}]]
         </a>
-        by the author.
       </div>
       <th:block
         th:replace="~{modules/post/postShaing :: postShaing} "

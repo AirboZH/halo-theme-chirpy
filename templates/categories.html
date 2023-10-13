@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html
-  th:replace="~{modules/layout :: html (title = '分类',content = ~{::content},
+  th:replace="~{modules/layout :: html (title = #{breadcrumb.categories}, content = ~{::content},
    layout = 'categories', breadcrumb = ~{::breadcrumb})}"
   xmlns:th="https://www.thymeleaf.org"
 >
   <th:block th:fragment="breadcrumb">
     <span>
-      <a href="/">首页</a>
+      <a href="/">[[#{breadcrumb.home}]]</a>
     </span>
-    <span>分类</span>
+    <span>[[#{breadcrumb.categories}]]</span>
   </th:block>
 
   <th:block th:fragment="content">
-    <h1 class="dynamic-title">分类</h1>
+    <h1 class="dynamic-title">[[#{breadcrumb.categories}]]</h1>
     <div class="content">
       <div class="card categories" th:each="category,index : ${categories}">
         <!-- top-category -->
