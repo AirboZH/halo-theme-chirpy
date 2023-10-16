@@ -52,7 +52,7 @@ jobs:
         run: |
           BUILD_DIR=dist/
           mkdir $BUILD_DIR
-          cp -r theme.yaml settings.yaml templates LICENSE $BUILD_DIR/
+          cp -r theme.yaml settings.yaml i18n templates LICENSE $BUILD_DIR/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
