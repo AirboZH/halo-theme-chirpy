@@ -14,18 +14,11 @@
 <th:block th:fragment="content">
   <header>
     <h1 data-toc-skip>[[${post.spec.title}]]</h1>
-
     <div class="post-meta text-muted">
       <!-- published date -->
       <span
         th:with="days=${(new java.util.Date().getTime()-post.spec.publishTime.toEpochMilli())/86400000}"
       >
-          Posted
-      <div class="post-meta text-muted">
-        <!-- published date -->
-        <span
-          th:with="days=${(new java.util.Date().getTime()-post.spec.publishTime.toEpochMilli())/86400000}"
-        >
           [[#{post.posted}]]
           <em
             class
@@ -64,8 +57,8 @@
           </em>
         </span>
 
-        <!-- lastmod date -->
-        <!--TODO publish time != update time-->
+      <!-- lastmod date -->
+      <!--TODO publish time != update time-->
       <span
         th:with="days=${(new java.util.Date().getTime()-post.status.lastModifyTime.toEpochMilli())/86400000}"
       >
@@ -139,9 +132,9 @@
             </span>
         </div>
       </div>
-        <!-- .d-flex -->
+      <!-- .d-flex -->
     </div>
-        <!-- .post-meta -->
+    <!-- .post-meta -->
   </header>
 
   <div class="content">
