@@ -66,6 +66,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
@@ -89,6 +90,6 @@ Chirpy Halo主题在[MIT许可证][mit]下发布。
 
 ## 
 > 本项目使用 JetBrains IDEA 进行开发
-<a href="https://www.jetbrains.com/?from=Toolkit"><img src="https://cdn.airbozh.cn/blog/jetbrains-logo-MrNwcp.png" width="10%" height="10%"></a>
-<a href="https://www.jetbrains.com/?from=Toolkit"><img src="https://cdn.airbozh.cn/blog/idea-logo-XpnqgG.png" width="10%" height="10%"> </a>
+<a href="https://www.jetbrains.com/?from=Toolkit"><img src="https://github.com/AirboZH/halo-theme-chirpy/assets/50261327/0abd0967-059c-4f64-82fb-b3b68548cae0" width="10%" height="10%"></a>
+<a href="https://www.jetbrains.com/?from=Toolkit"><img src="https://github.com/AirboZH/halo-theme-chirpy/assets/50261327/150fa13d-c04c-4476-ac46-8c8016c5c1a0" width="10%" height="10%"></a>
  
