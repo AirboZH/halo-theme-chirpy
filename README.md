@@ -90,6 +90,7 @@ Chirpy Halo主题在[MIT许可证][mit]下发布。
 
 ## 
 > 本项目使用 JetBrains IDEA 进行开发
+
 <a href="https://www.jetbrains.com/?from=Toolkit"><img src="https://github.com/AirboZH/halo-theme-chirpy/assets/50261327/0abd0967-059c-4f64-82fb-b3b68548cae0" width="10%" height="10%"></a>
 <a href="https://www.jetbrains.com/?from=Toolkit"><img src="https://github.com/AirboZH/halo-theme-chirpy/assets/50261327/150fa13d-c04c-4476-ac46-8c8016c5c1a0" width="10%" height="10%"></a>
  
