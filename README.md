@@ -86,3 +86,9 @@ Chirpy Halo主题在[MIT许可证][mit]下发布。
 [mit]: https://github.com/AirboZH/halo-theme-chirpy/blob/master/LICENSE
 [origin-github]: https://github.com/cotes2020/jekyll-theme-chirpy
 [front-awesome-icons]: https://fontawesome.com/search?o=r&m=free
+
+## 
+> 本项目使用 JetBrains IDEA 进行开发
+<a href="https://www.jetbrains.com/?from=Toolkit"><img src="https://cdn.airbozh.cn/blog/jetbrains-logo-MrNwcp.png" width="10%" height="10%"></a>
+<a href="https://www.jetbrains.com/?from=Toolkit"><img src="https://cdn.airbozh.cn/blog/idea-logo-XpnqgG.png" width="10%" height="10%"> </a>
+ 
