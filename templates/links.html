@@ -1,0 +1,31 @@
+<html
+  th:replace="~{modules/layout :: html (title = '友情链接', content = ~{::content}, layout = 'page' ,breadcrumb = ~{::breadcrumb})}"
+  xmlns:th="https://www.thymeleaf.org">
+<th:block th:fragment="breadcrumb">
+  <span>
+    <a href="/">[[#{breadcrumb.home}]]</a>
+  </span>
+  <span>友情链接</span>
+</th:block>
+
+<th:block th:fragment="content">
+  <h1 data-toc-skip>友情链接</h1>
+  <div class="page-links">
+    <div class="row" th:each="group : ${groups}">
+      <h2 class="mt-1" th:unless="${#strings.isEmpty(group.spec.displayName)}" th:text="${group.spec.displayName}"></h2>
+      <div class="col-md-4 mb-3" th:each="link : ${group.links}">
+        <a class="post-preview page-links-item" th:href="${link.spec.url}">
+          <div class="flex-shrink-0">
+            <img class="page-links-img" th:src="${link.spec.logo}" th:alt="${link.spec.displayName}">
+          </div>
+          <div class="flex-grow-1 ms-3 page-links-content">
+            <h4 class="pt-0 my-2 fw-bold" th:text="${link.spec.displayName}"></h4>
+            <span class="text-muted" th:text="${link.spec.description}"></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</th:block>
+
+</html>
