@@ -14,12 +14,12 @@
     <div class="row" th:each="group : ${groups}">
       <h2 class="mt-1" th:unless="${#strings.isEmpty(group.spec.displayName)}" th:text="${group.spec.displayName}"></h2>
       <div class="col-md-4 mb-3" th:each="link : ${group.links}">
-        <a class="post-preview page-links-item" th:href="${link.spec.url}">
+        <a class="post-preview page-links-item" th:href="${link.spec.url}" target="_blank">
           <div class="flex-shrink-0">
-            <img class="page-links-img" th:src="${link.spec.logo}" th:alt="${link.spec.displayName}">
+            <img class="page-links-img m-2" th:src="${link.spec.logo}" th:alt="${link.spec.displayName}">
           </div>
           <div class="flex-grow-1 ms-3 page-links-content">
-            <h4 class="pt-0 my-2 fw-bold" th:text="${link.spec.displayName}"></h4>
+            <h4 class="pt-0 my-2 mb-0 fw-bold" th:text="${link.spec.displayName}"></h4>
             <span class="text-muted" th:text="${link.spec.description}"></span>
           </div>
         </a>
