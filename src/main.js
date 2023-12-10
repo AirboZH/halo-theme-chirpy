@@ -12,9 +12,11 @@ import {categoryCollapse} from "./js/modules/components/category-collapse";
 import {imgLazy} from "./js/modules/components/img-lazyload";
 import {toc} from "./js/modules/components/toc";
 import {initClipboard} from "./js/modules/plugins";
+import {activeSidebar} from "./js/patch/sidebar";
 
 basic();
 initSidebar();
+activeSidebar();
 initTopbar();
 categoryCollapse();
 imgLazy();
