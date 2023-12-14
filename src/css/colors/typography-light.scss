@@ -25,15 +25,15 @@
   --checkbox-color: #c5c5c5;
   --checkbox-checked-color: #07a8f7;
   --img-bg: radial-gradient(
-    circle,
-    rgb(255, 255, 255) 0%,
-    rgb(239, 239, 239) 100%
+      circle,
+      rgb(255, 255, 255) 0%,
+      rgb(239, 239, 239) 100%
   );
   --shimmer-bg: linear-gradient(
-    90deg,
-    rgba(250, 250, 250, 0) 0%,
-    rgba(232, 230, 230, 1) 50%,
-    rgba(250, 250, 250, 0) 100%
+      90deg,
+      rgba(250, 250, 250, 0) 0%,
+      rgba(232, 230, 230, 1) 50%,
+      rgba(250, 250, 250, 0) 100%
   );
 
   /* Sidebar */
@@ -66,7 +66,7 @@
   --card-bg: white;
   --card-hovor-bg: #e2e2e2;
   --card-shadow: rgb(104, 104, 104, 0.05) 0 2px 6px 0,
-    rgba(211, 209, 209, 0.15) 0 0 0 1px;
+  rgba(211, 209, 209, 0.15) 0 0 0 1px;
   --footnote-target-bg: lightcyan;
   --tb-odd-bg: #fbfcfd;
   --tb-border-color: #eaeaea;
@@ -107,4 +107,21 @@
   --timeline-color: rgba(0, 0, 0, 0.075);
   --timeline-node-bg: #c2c6cc;
   --timeline-year-dot-color: #ffffff;
-} /* light-scheme */
+
+  /* Plugin-Search-Widget */
+  --halo-search-widget-color-modal-layer: rgb(107 114 128 / 0.75);
+  --halo-search-widget-color-modal-content-bg: #fff;
+  --halo-search-widget-color-form-input: #000;
+  --halo-search-widget-color-form-input-placeholder: #999;
+  --halo-search-widget-color-form-input-bg: #fff;
+  --halo-search-widget-color-form-divider: #eaeaea;
+  --halo-search-widget-color-result-item-bg: #fdfdfd;
+  --halo-search-widget-color-result-item-hover-bg: #f5f5f5;
+  --halo-search-widget-color-result-item-title: #000;
+  --halo-search-widget-color-result-item-content: #999;
+  --halo-search-widget-color-command-kbd-item: #333;
+  --halo-search-widget-color-command-kbd-border: #cfe1f1;
+  --halo-search-widget-color-result-empty: #999;
+}
+
+/* light-scheme */
