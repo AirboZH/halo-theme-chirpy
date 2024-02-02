@@ -24,7 +24,7 @@
     </h1>
     <ul
       class="post-content ps-0"
-      th:with="posts = ${postFinder.listByTag(1,-1,tag.metadata.name)}"
+      th:with="posts = ${postFinder.listByTag(1,0,tag.metadata.name)}"
     >
       <li
         class="d-flex justify-content-between px-md-3"

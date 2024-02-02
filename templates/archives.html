@@ -11,7 +11,7 @@
     <span>[[#{breadcrumb.archive}]]</span>
   </th:block>
   <div class="pl-xl-3" id="archives" th:fragment="content">
-    <th:block th:each="archive : ${postFinder.archives(1,-1).items}">
+    <th:block th:each="archive : ${postFinder.archives(1,0).items}">
       <div class="year lead">[[${archive.year}]]</div>
       <ul class="list-unstyled">
         <th:block th:each="month : ${archive.months}">
