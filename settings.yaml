@@ -1,3 +1,4 @@
+# nonk8s
 apiVersion: v1alpha1
 kind: Setting
 metadata:
@@ -93,4 +94,3 @@ spec:
               label: 链接
               value: ""
               required: true
-              
