@@ -1,1 +1,34 @@
 # nonk8s
+apiVersion: v1alpha1
+kind: AnnotationSetting
+metadata:
+  generateName: annotation-setting-chirpy
+spec:
+  targetRef:
+    group: ""
+    kind: MenuItem
+  formSchema:
+    - $formkit: "text"
+      name: "icon"
+      label: "图标"
+
+#---
+#
+#apiVersion: v1alpha1
+#kind: AnnotationSetting
+#metadata:
+#  generateName: annotation-setting-
+#spec:
+#  targetRef:
+#    group: content.halo.run
+#    kind: Post
+#  formSchema:
+#    - $formkit: "radio"
+#      name: "showInIndex"
+#      label: "在首页显示"
+#      value: "show"
+#      options:
+#        - label: 显示
+#          value: "show"
+#        - label: 不显示
+#          value: "hide"

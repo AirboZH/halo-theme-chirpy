@@ -26,5 +26,6 @@ archive.pipe(output);
 archive.directory('i18n/', true);
 archive.directory('templates/', true);
 archive.file('settings.yaml', {name: 'settings.yaml'});
+archive.file('annotation-setting.yaml', {name: 'annotation-setting.yaml'});
 archive.file('theme.yaml', {name: 'theme.yaml'});
 archive.finalize();
