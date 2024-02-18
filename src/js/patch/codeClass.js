@@ -16,7 +16,7 @@ export function codeBlock() {
     const codeElements = document.querySelectorAll('pre code');
     codeElements.forEach(function (codeElement) {
       let len = codeElement.innerHTML.split('\n').length + 1
-      if(codeElement.innerHTML.at(-1) === '\n') len -= 1;
+      if (codeElement.innerHTML.at(-1) === '\n') len -= 1;
       buildCodeBlock(codeElement);
       hljs.highlightBlock(codeElement);
       codeElement.removeAttribute('class');
@@ -29,10 +29,10 @@ let buildCodeBlock = (codeElement) => {
   let language = codeElement.classList[0];
 
   let parentDivElement = document.createElement('div');
-  let headerDivElement= buildCodeBlockHeader();
+  let headerDivElement = buildCodeBlockHeader();
   let codeDivElement = document.createElement('div');
 
-  parentDivElement.classList.add(language,'highlighter-rouge');
+  parentDivElement.classList.add(language, 'highlighter-rouge');
   codeDivElement.classList.add('highlight');
   parentDivElement.appendChild(headerDivElement);
   parentDivElement.appendChild(codeDivElement);
@@ -46,14 +46,13 @@ let buildCodeTable = (len, codeElement) => {
   let tbody = document.createElement('tbody');
   let tr = document.createElement('tr');
   let lineNumTd = document.createElement('td');
-  lineNumTd.classList.add('rouge-gutter','gl');
+  lineNumTd.classList.add('rouge-gutter', 'gl');
   let codeTd = document.createElement('td');
   codeTd.classList.add('rouge-code');
   let codePre = document.createElement('pre');
 
   codePre.innerHTML = codeElement.innerHTML;
   codeElement.innerHTML = '';
-
 
   lineNumTd.appendChild(buildLineNum(len));
   tr.appendChild(lineNumTd);
