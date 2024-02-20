@@ -18,7 +18,7 @@
 		<!--     .display none-->
 
     <th:block th:if="${!pluginFinder.available('PluginSearchWidget')}">
-			<button type="button" th:onclick="alert(#{top_bar.need_search_plugin})" class="btn btn-link">
+			<button type="button" th:onclick="alert([[#{top_bar.need_search_plugin}]])" class="btn btn-link">
         <i class="fas fa-search fa-fw"></i>
       </button>
     </th:block>
