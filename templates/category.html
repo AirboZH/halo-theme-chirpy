@@ -23,7 +23,7 @@
 
     <ul
       class="content ps-0"
-      th:with="posts = ${postFinder.listByCategory(1,-1,category.metadata.name)}"
+      th:with="posts = ${postFinder.listByCategory(1,0,category.metadata.name)}"
     >
       <li
         class="d-flex justify-content-between px-md-3"
