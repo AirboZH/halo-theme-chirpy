@@ -28,7 +28,6 @@
       th:text="${title}+' - '+ ${site.title}"
     ></title>
 
-    <link rel="manifest" th:href="@{/assets/dist/manifest.json}" />
     <link
       rel="stylesheet"
       th:href="@{/assets/dist/main.css?v={version}(version=${theme.spec.version})}"
