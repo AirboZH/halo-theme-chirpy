@@ -86,6 +86,10 @@ let buildCodeBlockHeader = () => {
   headSpan.appendChild(codeIcon);
   let copyButton = document.createElement('button');
   copyButton.setAttribute('aria-label', 'copy');
+  new bootstrap.Tooltip(copyButton, {
+    placement: 'left',
+    trigger: 'manual'
+  });
   copyButton.setAttribute('data-title-succeed', 'Copied!');
   let clipboardIcon = document.createElement('i');
   clipboardIcon.classList.add('far', 'fa-clipboard');

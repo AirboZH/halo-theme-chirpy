@@ -5,6 +5,7 @@
  *   - popper.js (https://github.com/popperjs/popper-core)
  *   - clipboard.js (https://github.com/zenorocha/clipboard.js)
  */
+import ClipboardJS from "clipboard";
 
 const clipboardSelector = '.code-header>button';
 const ICON_SUCCESS = 'fas fa-check';
@@ -40,11 +41,13 @@ const ICON_DEFAULT = getIcon(clipboardSelector);
 
 function showTooltip(btn) {
   const succeedTitle = $(btn).attr(ATTR_TITLE_SUCCEED);
-  $(btn).attr(ATTR_TITLE_ORIGIN, succeedTitle).tooltip('show');
+  $(btn).attr(ATTR_TITLE_ORIGIN, succeedTitle)
+  bootstrap.Tooltip.getInstance(btn).show();
 }
 
 function hideTooltip(btn) {
-  $(btn).tooltip('hide').removeAttr(ATTR_TITLE_ORIGIN);
+  bootstrap.Tooltip.getInstance(btn).hide();
+  $(btn).removeAttr(ATTR_TITLE_ORIGIN);
 }
 
 function setSuccessIcon(btn) {
@@ -61,7 +64,7 @@ function resumeIcon(btn) {
 
 export function initClipboard() {
   // Initial the clipboard.js object
-  if ($(clipboardSelector).length) {
+  if ($(clipboardSelector)) {
     const clipboard = new ClipboardJS(clipboardSelector, {
       target(trigger) {
         let codeBlock = trigger.parentNode.nextElementSibling;
@@ -113,7 +116,8 @@ export function initClipboard() {
       const defaultTitle = target.attr(ATTR_TITLE_ORIGIN);
       const succeedTitle = target.attr(ATTR_TITLE_SUCCEED);
       // Switch tooltip title
-      target.attr(ATTR_TITLE_ORIGIN, succeedTitle).tooltip('show');
+      target.attr(ATTR_TITLE_ORIGIN, succeedTitle);
+      bootstrap.Tooltip.getInstance(target).show();
       lock(target);
 
       setTimeout(() => {
@@ -125,7 +129,7 @@ export function initClipboard() {
 
   btnCopyLink.on('mouseleave', function (e) {
     const target = $(e.target);
-    target.tooltip('hide');
+    bootstrap.Tooltip.getInstance(target).hide();
     console.log('mouse leave...');
   });
 }
