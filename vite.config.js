@@ -10,7 +10,6 @@ export default defineConfig({
   build: {
     outDir: fileURLToPath(new URL('./templates/assets/dist/', import.meta.url)),
     emptyOutDir: true,
-    manifest: true,
     minify: true,
     cssMinify: true,
     rollupOptions: {
