@@ -314,15 +314,14 @@ i {
     overflow-x: auto;
     border-spacing: 0;
 
-    thead {
-      border-bottom: solid 2px rgba(210, 215, 217, 0.75);
-
-      th {
-        @extend %table-cell;
-      }
-    }
-
     tbody {
+      tr:first-child {
+        border-bottom: solid 2px rgba(210, 215, 217, 0.75);
+
+        th {
+          @extend %table-cell;
+        }
+      }
       tr {
         border-bottom: 1px solid var(--tb-border-color);
 
