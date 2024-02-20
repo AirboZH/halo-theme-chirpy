@@ -1,5 +1,8 @@
-import 'jquery';
+import $ from 'jquery'
+window.jQuery = $
+window.$ = $
 import 'bootstrap';
+window.bootstrap = bootstrap
 import 'magnific-popup';
 import 'tocbot';
 import './css/style.scss';

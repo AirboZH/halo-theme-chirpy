@@ -32,6 +32,7 @@ export default defineConfig({
   plugins: [
     inject({
       $: 'jquery',
+      jQuery: 'jquery',
       bootstrap: ['bootstrap', '*']
     })
   ],
