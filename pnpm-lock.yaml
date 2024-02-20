@@ -17,9 +17,6 @@ dependencies:
   clipboard:
     specifier: ^2.0.11
     version: 2.0.11
-  datatables:
-    specifier: ^1.10.18
-    version: 1.10.18
   glob:
     specifier: ^10.3.3
     version: 10.3.3
@@ -897,12 +894,6 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
     dev: true
-
-  /datatables@1.10.18:
-    resolution: {integrity: sha512-ntatMgS9NN6UMpwbmO+QkYJuKlVeMA2Mi0Gu/QxyIh+dW7ZjLSDhPT2tWlzjpIWEkDYgieDzS9Nu7bdQCW0sbQ==}
-    dependencies:
-      jquery: 3.7.1
-    dev: false
 
   /debug@4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
