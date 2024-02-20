@@ -13,6 +13,7 @@ const ATTR_TIMEOUT = 'timeout';
 const ATTR_TITLE_SUCCEED = 'data-title-succeed';
 const ATTR_TITLE_ORIGIN = 'data-bs-original-title';
 const TIMEOUT = 2000; // in milliseconds
+const ICON_DEFAULT = 'far fa-clipboard';
 
 function isLocked(node) {
   if ($(node)[0].hasAttribute(ATTR_TIMEOUT)) {
@@ -31,13 +32,6 @@ function lock(node) {
 function unlock(node) {
   $(node).removeAttr(ATTR_TIMEOUT);
 }
-
-function getIcon(btn) {
-  let iconNode = $(btn).children();
-  return iconNode.attr('class');
-}
-
-const ICON_DEFAULT = getIcon(clipboardSelector);
 
 function showTooltip(btn) {
   const succeedTitle = $(btn).attr(ATTR_TITLE_SUCCEED);
