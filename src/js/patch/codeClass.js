@@ -26,7 +26,7 @@ export function codeBlock() {
 }
 
 let buildCodeBlock = (codeElement) => {
-  let language = codeElement.classList[0];
+  let language = codeElement.classList[0]? codeElement.classList[0] : 'language-plaintext';
 
   let parentDivElement = document.createElement('div');
   let headerDivElement = buildCodeBlockHeader();
