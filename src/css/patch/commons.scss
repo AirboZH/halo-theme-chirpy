@@ -41,3 +41,7 @@
 #comment {
   margin: 2rem 0;
 }
+
+.content p img {
+  @extend %rounded;
+}
