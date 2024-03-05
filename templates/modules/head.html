@@ -28,14 +28,7 @@
       th:text="${title}+' - '+ ${site.title}"
     ></title>
 
-    <link
-      rel="stylesheet"
-      th:href="@{/assets/dist/main.css?v={version}(version=${theme.spec.version})}"
-    />
-    <script
-      th:src="@{/assets/dist/main.js?v={version}(version=${theme.spec.version})}"
-      type="module"
-    ></script>
+    <th:block th:replace="~{modules/import :: import()}"></th:block>
 
     <th:block th:replace="~{modules/mode-toggle :: mode_toggle()}"></th:block>
   </head>

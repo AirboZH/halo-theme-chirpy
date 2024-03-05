@@ -3,12 +3,13 @@
   "version": "1.4.1",
   "description": "A minimal, responsive and feature-rich Halo theme for technical writing.",
   "scripts": {
-    "build": "vite build",
+    "build": "cross-env NODE_ENV=prod node mode.js && vite build",
+    "dev": "cross-env NODE_ENV=dev node mode.js && node export-zip.js && vite",
     "lint": "eslint ./src --ext .js --ignore-path .gitignore",
     "stylelint": "stylelint ./src/css/patch/**/*.scss",
     "prettier": "prettier --write './src/css/patch/**/*.scss' './templates/**/*.html'",
     "prettier-win": "prettier --write \"./src/css/patch/**/*.scss\" \"./templates/**/*.html\"",
-    "zip": "vite build && node export-zip.js"
+    "zip": "npm run build && cross-env NODE_ENV=prod  node export-zip.js"
   },
   "keywords": [
     "halo",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@rollup/plugin-inject": "^5.0.3",
     "archiver": "^6.0.1",
+    "cross-env": "^7.0.3",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
