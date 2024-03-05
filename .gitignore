@@ -26,3 +26,4 @@ build
 gradle
 dist/
 /halo-theme-chirpy*.zip
+/templates/modules/import.html
