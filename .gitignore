@@ -25,4 +25,4 @@ node_modules
 build
 gradle
 dist/
-/halo-theme-chirpy.zip
+/halo-theme-chirpy*.zip
