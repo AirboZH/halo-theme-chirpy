@@ -116,6 +116,7 @@
 
   /* Plugin-Comment-Widget */
   --halo-comment-widget-base-color: #adbac7;
+  --halo-comment-widget-base-info-color: #64748b;
   --halo-comment-widget-component-form-input-bg-color: #22272e;
   --halo-comment-widget-component-form-input-color: #afb0b1;
   --halo-comment-widget-component-form-input-border-color: #444c56;
@@ -127,11 +128,9 @@
   --halo-comment-widget-component-form-button-submit-bg-color: #347d39;
   --halo-comment-widget-component-form-button-submit-border-color: #cdd9e51a;
   --halo-comment-widget-component-form-button-submit-border-color-hover: #cdd9e51a;
-  --halo-comment-widget-component-form-button-emoji-color: #768390;
+  --halo-comment-widget-component-form-button-emoji-color: #adbac7;
 
-  --halo-comment-widget-component-comment-item-meta-info-color: darkgary;
   --halo-comment-widget-component-comment-item-action-bg-color-hover: #475569;
-  --halo-comment-widget-component-comment-item-action-color: #768390;
   --halo-comment-widget-component-comment-item-action-color-hover: #94a3b8;
 
   --halo-comment-widget-component-pagination-button-bg-color-hover: #475569;
