@@ -19,15 +19,9 @@
     <div id="comment">
       <halo:comment
         group="content.halo.run"
-        kind="Post"
+        kind="SinglePage"
         th:attr="name=${singlePage.metadata.name}"
-        colorScheme="
-        (()=>{
-        if(document.documentElement.getAttribute('data-mode'))
-          return document.documentElement.getAttribute('data-mode')
-        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
-        })()
-      "/>
+      />
     </div>
   </th:block>
 </html>
