@@ -381,9 +381,7 @@ main {
   p {
     > img[data-src],
     > a.popup {
-      &:not(.normal):not(.left):not(.right) {
-        @include align-center;
-      }
+      display: inline-block;
     }
   }
 

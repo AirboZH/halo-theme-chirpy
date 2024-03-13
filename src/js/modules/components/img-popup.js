@@ -3,8 +3,11 @@
  *
  * See: https://github.com/dimsemenov/Magnific-Popup
  */
+import {preImg} from "../../patch/pre-img";
 
 export function imgPopup() {
+  preImg();
+
   if ($('.popup') <= 0) {
     return;
   }
