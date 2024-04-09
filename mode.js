@@ -3,9 +3,11 @@ const fs = require('fs');
 const mode = process.env.NODE_ENV || 'dev';
 
 const preHTML = `<!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org" lang="en" th:fragment="import()">`
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+  <th:block th:fragment="import()">`
 
-const postHTML = `</html>`
+const postHTML = `  </th:block>
+</html>`;
 
 const productionImport = `
    <link
