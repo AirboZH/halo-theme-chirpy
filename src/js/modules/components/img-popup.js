@@ -8,7 +8,7 @@ import {preImg} from "../../patch/pre-img";
 export function imgPopup() {
   preImg();
 
-  if ($('.popup') <= 0) {
+  if ($(".popup").length <= 0) {
     return;
   }
 
