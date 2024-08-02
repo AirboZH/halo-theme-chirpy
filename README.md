@@ -8,7 +8,7 @@
 <a href="https://github.com/AirboZH/halo-theme-chirpy/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/AirboZH/halo-theme-chirpy.svg?style=flat-square&include_prereleases" /></a>
 <a href="https://github.com/AirboZH/halo-theme-chirpy/commits"><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/AirboZH/halo-theme-chirpy.svg?style=flat-square" /></a>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
   
@@ -60,6 +60,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/SinclairLin"><img src="https://avatars.githubusercontent.com/u/109134798?v=4?s=100" width="100px;" alt="linzx"/><br /><sub><b>linzx</b></sub></a><br /><a href="#ideas-SinclairLin" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/IObsession"><img src="https://avatars.githubusercontent.com/u/83881232?v=4?s=100" width="100px;" alt="IObsession"/><br /><sub><b>IObsession</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/issues?q=author%3AIObsession" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Camellia-2"><img src="https://avatars.githubusercontent.com/u/149544854?v=4?s=100" width="100px;" alt="Camellia"/><br /><sub><b>Camellia</b></sub></a><br /><a href="#ideas-Camellia-2" title="Ideas, Planning, & Feedback">🤔</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.airsado.cn"><img src="https://avatars.githubusercontent.com/u/69459353?v=4?s=100" width="100px;" alt="Airsado"/><br /><sub><b>Airsado</b></sub></a><br /><a href="https://github.com/AirboZH/halo-theme-chirpy/commits?author=Airsado" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
