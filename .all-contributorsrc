@@ -140,6 +140,15 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "Airsado",
+      "name": "Airsado",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69459353?v=4",
+      "profile": "https://www.airsado.cn",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
