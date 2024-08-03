@@ -29,7 +29,7 @@
               >
               <!-- content count -->
               <span class="text-muted small font-weight-light">
-                [[${category.status.visiblePostCount} + ' 篇文章']]
+                [[${category.status.visiblePostCount == null ? 0 : category.status.visiblePostCount} + ' 篇文章']]
               </span>
             </span>
             <!-- arrow -->
@@ -51,7 +51,7 @@
               <!-- content count -->
               <span class="text-muted small font-weight-light">
                 [[${#lists.size(category.children)} + '个分类 ' +
-                ${category.status.visiblePostCount} + ' 篇文章']]
+                ${category.status.visiblePostCount == null ? 0 : category.status.visiblePostCount} + ' 篇文章']]
               </span>
             </span>
             <!-- arrow -->
@@ -86,7 +86,7 @@
               >
 
               <span class="text-muted small font-weight-light">
-                [[${subcategory.status.visiblePostCount} + ' 篇文章']]
+                [[${subcategory.status.visiblePostCount == null ? '0' : subcategory.status.visiblePostCount} + ' 篇文章']]
               </span>
             </li>
           </ul>
