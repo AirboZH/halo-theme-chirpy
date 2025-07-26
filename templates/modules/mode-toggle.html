@@ -25,6 +25,12 @@
       }
 
       constructor() {
+        if (!this.currentModeAttribute && this.modeStatus === ModeToggle.DARK_MODE) {
+          this.setDark();
+        } else {
+          this.setLight();
+        }
+
         if (this.hasMode) {
           if (this.isDarkMode) {
             if (!this.isSysDarkPrefer) {
@@ -58,6 +64,10 @@
           self.notify();
         });
       } /* constructor() */
+
+      get currentModeAttribute() {
+        return document.documentElement.getAttribute(ModeToggle.MODE_ATTR);
+      }
 
       get sysDarkPrefers() {
         return window.matchMedia("(prefers-color-scheme: dark)");
@@ -115,6 +125,7 @@
 
       /* Notify another plugins that the theme mode has changed */
       notify() {
+        halo.flipMode();
         window.postMessage(
           {
             direction: ModeToggle.ID,
@@ -138,7 +149,6 @@
             this.setDark();
           }
         }
-        halo.flipMode();
         this.notify();
       } /* flipMode() */
     } /* ModeToggle */
