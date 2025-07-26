@@ -2,154 +2,157 @@
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
   <!-- Switch the mode between dark and light. -->
 
-<script type="text/javascript" th:fragment="mode_toggle()">
-  class ModeToggle {
-    static get MODE_KEY() {
-      return "mode";
-    }
-
-    static get MODE_ATTR() {
-      return "data-mode";
-    }
-
-    static get DARK_MODE() {
-      return "dark";
-    }
-
-    static get LIGHT_MODE() {
-      return "light";
-    }
-
-    static get ID() {
-      return "mode-toggle";
-    }
-
-    constructor() {
-      const currentAttr = document.documentElement.getAttribute(ModeToggle.MODE_ATTR);
-      let isAttrValid = (currentAttr === ModeToggle.LIGHT_MODE || currentAttr === ModeToggle.DARK_MODE);
-
-      if (!isAttrValid) {
-         const effectiveMode = this.modeStatus;
-         document.documentElement.setAttribute(ModeToggle.MODE_ATTR, effectiveMode);
+  <script type="text/javascript" th:fragment="mode_toggle()">
+    class ModeToggle {
+      static get MODE_KEY() {
+        return "mode";
       }
 
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          if (document.documentElement.getAttribute(ModeToggle.MODE_ATTR) !== ModeToggle.DARK_MODE) {
-             this.setDark();
-          }
-        } else if (this.isLightMode) {
-          if (document.documentElement.getAttribute(ModeToggle.MODE_ATTR) !== ModeToggle.LIGHT_MODE) {
-            this.setLight();
-          }
-        }
+      static get MODE_ATTR() {
+        return "data-mode";
       }
 
-      let self = this;
+      static get DARK_MODE() {
+        return "dark";
+      }
 
-      this.sysDarkPrefers.addEventListener("change", () => {
-        const newEffectiveModeIfNotStored = self.isSysDarkPrefer ? ModeToggle.DARK_MODE : ModeToggle.LIGHT_MODE;
+      static get LIGHT_MODE() {
+        return "light";
+      }
 
-        if (self.hasMode) {
-           const currentStoredMode = self.mode;
-           if (document.documentElement.getAttribute(ModeToggle.MODE_ATTR) !== currentStoredMode) {
-               document.documentElement.setAttribute(ModeToggle.MODE_ATTR, currentStoredMode);
-           }
-           self.notify();
+      static get ID() {
+        return "mode-toggle";
+      }
 
-        } else {
-           document.documentElement.setAttribute(ModeToggle.MODE_ATTR, newEffectiveModeIfNotStored);
-           self.notify();
+      constructor() {
+        const currentAttr = document.documentElement.getAttribute(ModeToggle.MODE_ATTR);
+        let isAttrValid = (currentAttr === ModeToggle.LIGHT_MODE || currentAttr === ModeToggle.DARK_MODE);
+
+        if (!isAttrValid) {
+          const effectiveMode = this.modeStatus;
+          document.documentElement.setAttribute(ModeToggle.MODE_ATTR, effectiveMode);
         }
-      });
-    }
 
-    get sysDarkPrefers() {
-      return window.matchMedia("(prefers-color-scheme: dark)");
-    }
+        if (this.hasMode) {
+          if (this.isDarkMode) {
+            if (document.documentElement.getAttribute(ModeToggle.MODE_ATTR) !== ModeToggle.DARK_MODE) {
+              this.setDark();
+            }
+          } else if (this.isLightMode) {
+            if (document.documentElement.getAttribute(ModeToggle.MODE_ATTR) !== ModeToggle.LIGHT_MODE) {
+              this.setLight();
+            }
+          }
+        }
 
-    get isSysDarkPrefer() {
-      return this.sysDarkPrefers.matches;
-    }
+        let self = this;
 
-    get isDarkMode() {
-      return this.mode === ModeToggle.DARK_MODE;
-    }
+        this.sysDarkPrefers.addEventListener("change", () => {
+          const newEffectiveModeIfNotStored = self.isSysDarkPrefer ? ModeToggle.DARK_MODE : ModeToggle.LIGHT_MODE;
 
-    get isLightMode() {
-      return this.mode === ModeToggle.LIGHT_MODE;
-    }
+          if (self.hasMode) {
+            const currentStoredMode = self.mode;
+            if (document.documentElement.getAttribute(ModeToggle.MODE_ATTR) !== currentStoredMode) {
+              document.documentElement.setAttribute(ModeToggle.MODE_ATTR, currentStoredMode);
+            }
+            self.notify();
 
-    get hasMode() {
-      return this.mode != null;
-    }
+          } else {
+            document.documentElement.setAttribute(ModeToggle.MODE_ATTR, newEffectiveModeIfNotStored);
+            self.notify();
+          }
+        });
+      }
 
-    get mode() {
-      const storedValue = sessionStorage.getItem(ModeToggle.MODE_KEY);
-      if (storedValue === ModeToggle.LIGHT_MODE || storedValue === ModeToggle.DARK_MODE) {
-        return storedValue;
-      } else if (storedValue !== null) {
-        console.warn(`Invalid mode '${storedValue}' found in sessionStorage. Clearing.`);
+      get sysDarkPrefers() {
+        return window.matchMedia("(prefers-color-scheme: dark)");
+      }
+
+      get isSysDarkPrefer() {
+        return this.sysDarkPrefers.matches;
+      }
+
+      get isDarkMode() {
+        return this.mode === ModeToggle.DARK_MODE;
+      }
+
+      get isLightMode() {
+        return this.mode === ModeToggle.LIGHT_MODE;
+      }
+
+      get hasMode() {
+        return this.mode != null;
+      }
+
+      get mode() {
+        const storedValue = sessionStorage.getItem(ModeToggle.MODE_KEY);
+        if (storedValue === ModeToggle.LIGHT_MODE || storedValue === ModeToggle.DARK_MODE) {
+          return storedValue;
+        } else if (storedValue !== null) {
+          console.warn(`Invalid mode '${storedValue}' found in sessionStorage. Clearing.`);
+          sessionStorage.removeItem(ModeToggle.MODE_KEY);
+        }
+        return null;
+      }
+
+      get modeStatus() {
+        if (this.hasMode) {
+          return this.mode;
+        }
+        return this.isSysDarkPrefer ? ModeToggle.DARK_MODE : ModeToggle.LIGHT_MODE;
+      }
+
+      setDark() {
+        document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
+        sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
+      }
+
+      setLight() {
+        document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
+        sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
+      }
+
+      clearMode() {
+        document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
         sessionStorage.removeItem(ModeToggle.MODE_KEY);
       }
-      return null;
-    }
 
-    get modeStatus() {
-      if (this.hasMode) {
-        return this.mode;
+      notify() {
+        window.postMessage(
+          {
+            direction: ModeToggle.ID,
+            message: this.modeStatus
+          },
+          "*"
+        );
       }
-      return this.isSysDarkPrefer ? ModeToggle.DARK_MODE : ModeToggle.LIGHT_MODE;
-    }
 
-    setDark() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE);
-    }
-
-    setLight() {
-      document.documentElement.setAttribute(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE);
-      sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE);
-    }
-
-    clearMode() {
-      document.documentElement.removeAttribute(ModeToggle.MODE_ATTR);
-      sessionStorage.removeItem(ModeToggle.MODE_KEY);
-    }
-
-    notify() {
-      window.postMessage(
-        {
-          direction: ModeToggle.ID,
-          message: this.modeStatus
-        },
-        "*"
-      );
-    }
-
-    flipMode() {
-      if (this.hasMode) {
-        if (this.isDarkMode) {
-          this.setLight();
+      flipMode() {
+        if (this.hasMode) {
+          if (this.isDarkMode) {
+            this.setLight();
+          } else {
+            this.setDark();
+          }
         } else {
-          this.setDark();
+          if (this.isSysDarkPrefer) {
+            this.setLight();
+          } else {
+            this.setDark();
+          }
         }
-      } else {
-        if (this.isSysDarkPrefer) {
-          this.setLight();
-        } else {
-          this.setDark();
+        if (typeof halo !== 'undefined' && typeof halo.flipMode === 'function') {
+          halo.flipMode();
         }
+        this.notify();
       }
-      if (typeof halo !== 'undefined' && typeof halo.flipMode === 'function') {
-        halo.flipMode();
-      }
-      this.notify();
     }
-  }
 
-  window.halo = window.halo || { flipMode: function () { } };
+    window.halo = window.halo || {
+      flipMode: function () {
+      }
+    };
 
-  const modeToggle = new ModeToggle();
-</script>
+    const modeToggle = new ModeToggle();
+  </script>
 </html>
