@@ -312,6 +312,18 @@ h1 + .post-meta {
     ul {
       padding-left: 0.75rem;
     }
+
+    /* Collapsible behaviour driven by tocbot's collapseDepth */
+
+    .is-collapsible {
+      max-height: 1000px;
+      overflow: hidden;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .is-collapsed {
+      max-height: 0;
+    }
   }
 }
 
