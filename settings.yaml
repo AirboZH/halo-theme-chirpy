@@ -61,6 +61,64 @@ spec:
               value: ""
               required: true
 
+    - group: toc
+      label: 目录 (TOC)
+      formSchema:
+        - $formkit: select
+          name: startLevel
+          label: 起始标题层级
+          value: 2
+          help: 目录从该标题层级开始显示。若文章以 H1 组织内容，可设为 H1。
+          options:
+            - label: "H1"
+              value: 1
+            - label: "H2"
+              value: 2
+            - label: "H3"
+              value: 3
+            - label: "H4"
+              value: 4
+            - label: "H5"
+              value: 5
+            - label: "H6"
+              value: 6
+        - $formkit: select
+          name: endLevel
+          label: 结束标题层级
+          value: 4
+          help: 目录显示到该标题层级为止（需大于等于起始层级）。
+          options:
+            - label: "H1"
+              value: 1
+            - label: "H2"
+              value: 2
+            - label: "H3"
+              value: 3
+            - label: "H4"
+              value: 4
+            - label: "H5"
+              value: 5
+            - label: "H6"
+              value: 6
+        - $formkit: select
+          name: collapseDepth
+          label: 折叠层级
+          value: 6
+          help: 目录保持展开的层级数；更深的子标题会被折叠，滚动到对应区域时自动展开。设为「全部展开」则不折叠。
+          options:
+            - label: "1 级"
+              value: 1
+            - label: "2 级"
+              value: 2
+            - label: "3 级"
+              value: 3
+            - label: "4 级"
+              value: 4
+            - label: "5 级"
+              value: 5
+            - label: "全部展开（不折叠）"
+              value: 6
+
     - group: post
       label: 文章
       formSchema:

@@ -12,7 +12,12 @@
     <th:block th:if="${layout} eq 'post'">
       <section id="toc-wrapper" class="ps-0 pe-4 mb-5">
         <h2 class="panel-heading ps-3 pt-2 mb-2">[[#{panel.contents}]]</h2>
-        <nav id="toc"></nav>
+        <nav
+          id="toc"
+          th:data-toc-start-level="${theme.config.toc?.startLevel} ?: 2"
+          th:data-toc-end-level="${theme.config.toc?.endLevel} ?: 4"
+          th:data-toc-collapse-depth="${theme.config.toc?.collapseDepth} ?: 6"
+        ></nav>
       </section>
     </th:block>
     <section
